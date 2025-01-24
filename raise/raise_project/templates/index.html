@@ -1,0 +1,45 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Manage Programmes</h5>
+                    <p class="card-text">View, edit, and manage all your programmes.</p>
+                    <a href="#" class="btn btn-primary">Go to Programmes</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Manage Rooms</h5>
+                    <p class="card-text">View, edit, and manage all your rooms.</p>
+                    <a href="#" class="btn btn-primary">Go to Rooms</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section id="dashboard">
+    <h2>Dashboard</h2>
+    <div class="dashboard-options">
+        <a href="{% url 'program_list' %}" class="dashboard-option">
+            <i class="fas fa-cogs"></i>
+            <span>Manage Programs</span>
+        </a>
+        <a href="{% url 'manage_rooms' %}" class="dashboard-option">
+            <i class="fas fa-door-open"></i>
+            <span>Manage Rooms</span>
+        </a>
+        <!-- Add more dashboard options as needed -->
+    </div>
+</section>
+{% endblock %}

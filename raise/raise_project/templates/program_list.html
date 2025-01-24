@@ -1,0 +1,37 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+
+{% block content %}
+<h2>Manage Programs</h2>
+<a href="{% url 'add_program' %}" class="btn btn-primary">Add New Program</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Level</th>
+            <th>Duration</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for program in programs %}
+        <tr>
+            <td>{{ program.id }}</td>
+            <td>{{ program.programme_name }}</td>
+            <td>{{ program }}</td>
+            <td>{{ program.level }}</td>
+            <td>{{ program.duration }}</td>
+            <td>
+                <a href="{% url 'edit_program' program.pk %}" class="btn btn-warning">Edit</a>
+                <a href="{% url 'delete_program' program.pk %}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
