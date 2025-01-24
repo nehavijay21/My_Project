@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Manage Programmes</h5>
                     <p class="card-text">View, edit, and manage all your programmes.</p>
-                    <a href="#" class="btn btn-primary">Go to Programmes</a>
+                    <a href="{% url 'program_list' %}" class="btn btn-primary">Go to Programmes</a>
                 </div>
             </div>
         </div>
@@ -22,24 +22,52 @@
                 <div class="card-body">
                     <h5 class="card-title">Manage Rooms</h5>
                     <p class="card-text">View, edit, and manage all your rooms.</p>
-                    <a href="#" class="btn btn-primary">Go to Rooms</a>
+                    <a href="{% url 'manage_rooms' %}" class="btn btn-primary">Go to Rooms</a>
                 </div>
             </div>
         </div>
+         {% comment %}<div class="col-md-6">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Manage Courses</h5>
+                    <p class="card-text">View, edit, and manage all your Courses.</p>
+                    <a href="{% url 'manage_course' %}" class="btn btn-primary">Go to Courses</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Manage Exams</h5>
+                    <p class="card-text">Create, update, and monitor all exams.</p>
+                    <a href="{% url 'manage_exams' %}" class="btn btn-primary">Go to Exams</a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Add Timetable -->
+        <div class="col-md-6">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Add Timetable</h5>
+                    <p class="card-text">Schedule exams and manage timetables.</p>
+                    <a href="{% url 'add_timetable' %}" class="btn btn-primary">Go to Timetable</a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Assign Duty -->
+        <div class="col-md-6">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Assign Duty</h5>
+                    <p class="card-text">Assign invigilators and exam duties.</p>
+                    <a href="{% url 'assign_duty' %}" class="btn btn-primary">Go to Duty Assignment</a>
+                </div>
+            </div>
+        </div> {% endcomment %}
+    
     </div>
 </div>
-<section id="dashboard">
-    <h2>Dashboard</h2>
-    <div class="dashboard-options">
-        <a href="{% url 'program_list' %}" class="dashboard-option">
-            <i class="fas fa-cogs"></i>
-            <span>Manage Programs</span>
-        </a>
-        <a href="{% url 'manage_rooms' %}" class="dashboard-option">
-            <i class="fas fa-door-open"></i>
-            <span>Manage Rooms</span>
-        </a>
-        <!-- Add more dashboard options as needed -->
-    </div>
-</section>
+
 {% endblock %}
