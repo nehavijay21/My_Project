@@ -154,6 +154,8 @@ class TimetableForm(forms.ModelForm):
         self.fields['course'].queryset = Course.objects.all()
         self.fields['course'].label_from_instance = lambda obj: f"{obj.course_code} - {obj.course_title}"
 
+        self.fields['course'].empty_label = '--------'
+
     def clean_date(self):
         date = self.cleaned_data.get('date')
         if date < timezone.now().date():

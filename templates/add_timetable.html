@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
     <style>
         .bg-navy {
-          background-color: #000080; /* Navy blue */
+          background-color: #000080;
         }
     </style>
 </head>
@@ -42,8 +42,6 @@
                         <div class="mb-3">
                             <label for="id_date" class="form-label">Date</label>
                             {{ form.date }}
-                            
-                            <!-- Display error/warning for the 'date' field -->
                             {% for error in form.date.errors %}
                                 <div class="alert alert-warning mt-2">{{ error }}</div>
                             {% endfor %}
@@ -64,6 +62,36 @@
         </div>
     </div>
 </div>
+
+<!-- jQuery (required for AJAX) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    // AJAX call to update course dropdown based on exam selection
+    $('#id_exam').change(function () {
+        let examId = $(this).val();
+        if (examId) {
+            $.ajax({
+                url: "{% url 'get_courses_by_exam' %}",
+                data: {
+                    'exam_id': examId
+                },
+                success: function (data) {
+                    let courseSelect = $('#id_course');
+                    courseSelect.empty();  // Clear current options
+                    if (data.courses && data.courses.length > 0) {
+                        data.courses.forEach(course => {
+                            let option = new Option(course.name, course.id);
+                            courseSelect.append(option);
+                        });
+                    } else {
+                        courseSelect.append(new Option("No courses found", ""));
+                    }
+                }
+            });
+        }
+    });
+</script>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>

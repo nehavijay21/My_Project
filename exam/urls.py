@@ -41,6 +41,7 @@ urlpatterns = [
     path('add-timetable/', views.add_timetable, name='add_timetable'),
     path('edit-timetable/<int:pk>/', views.edit_timetable, name='edit_timetable'),
     path('delete-timetable/<int:pk>/', views.delete_timetable, name='delete_timetable'),
+    path('ajax/get-courses/', views.get_courses_by_exam, name='get_courses_by_exam'),
 
     path('teacher_list/', views.teacher_list, name='teacher_list'),
     path('add-teacher/', views.add_teacher, name='add_teacher'),

@@ -310,6 +310,23 @@ def delete_timetable(request, pk):
         return redirect('timetable_list')
     return render(request, 'delete_timetable.html', {'timetable': timetable})
 
+
+from django.http import JsonResponse
+from .models import Course, Exam
+
+def get_courses_by_exam(request):
+    exam_id = request.GET.get('exam_id')
+    if exam_id:
+        try:
+            exam = Exam.objects.get(pk=exam_id)
+            courses = Course.objects.filter(sem=exam.sem)
+            data = [{'id': c.pk, 'name': f'{c.course_code} - {c.course_title}'} for c in courses]
+            return JsonResponse({'courses': data})
+        except Exam.DoesNotExist:
+            return JsonResponse({'error': 'Invalid exam ID'}, status=400)
+    return JsonResponse({'error': 'No exam ID provided'}, status=400)
+
+
 @login_required()
 @user_passes_test(chief_group_required)
 def teacher_list(request):
