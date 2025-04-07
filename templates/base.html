@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Application{% endblock %}</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        header {
+            background-color: #04026a;
+            color: #79c1f9;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 0;
+        }
+        .logout-form {
+            margin: 0;
+        }
+        .logout-btn {
+            background-color: transparent;
+            border: 1px solid #79c1f9;
+            color: #79c1f9;
+            font-weight: bold;
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .logout-btn:hover {
+            background-color: #79c1f9;
+            color: #04026a;
+        }
+        footer {
+            background-color: #e3f2fd;
+            color: #0d47a1;
+        }
+        .fixed-bottom {
+            position: static;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1030;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>RAISE</h1>
+        <form action="{% url 'logout' %}" method="post" class="logout-form">
+            {% csrf_token %}
+            <span class="navbar-text text-white me-3" style="font-size:20px;">Welcome, {{ user.username|title }}!</span>
+            <button type="submit" style="font-size:20px;" class="logout-btn">
+                <div id="log-text">Logout</div>
+            </button>
+        </form>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Index</a>
+                    </li>
+                    
+                    {% if is_chief %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'program_list' %}">Programmes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'room_list' %}">Rooms</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'course_list' %}">Courses</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'exam_list' %}">Exams</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'timetable_list' %}">Timetable</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'teacher_list' %}">Teacher</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'duty_allotment' %}">Duty Allotment</a></li>
+                    {% endif %}
+                    
+                    {% if is_teacher %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'preference_list' %}">Duty Preference</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'duty_history' %}">Duty History</a></li>
+                        
+                        <!-- Dropdown for Ongoing Exams, Duty Allotments, and Preferences -->
+                        
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="fixed-bottom">
+        <div class="bg-white text-dark py-3">
+            <div class="container text-center">
+                <p class="mb-0" style="font-size: 0.9rem;">&copy; 2025 Raise. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

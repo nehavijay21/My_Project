@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        .container {
+            width: 400px;
+            padding: 40px;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(65, 143, 222, 0.2);
+            text-align: center;
+        }
+
+        .container h2 {
+            margin-bottom: 30px;
+            font-size: 28px;
+            color: #1a73e8;
+        }
+
+        input[type="text"], 
+        input[type="password"] {
+            width: 100%; 
+            padding: 14px;  
+            margin-bottom: 20px;
+            border: 1px solid #dcdfe2;
+            border-radius: 8px;
+            background: #f8f9fc;
+            color: #333;
+            font-size: 16px; 
+            transition: border 0.3s;
+            box-sizing: border-box; 
+        }
+
+        input[type="text"]:focus, 
+        input[type="password"]:focus {
+            border-color: #1a73e8;
+            outline: none;
+        }
+
+        
+        input[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            background: #1a73e8;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: #155cbf; 
+        }
+
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: #555;
+            text-align: left;
+        }
+
+       
+        ul.errorlist.nonfield {
+            color: #f44336;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+       
+        .forgot-password {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #1a73e8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .forgot-password:hover {
+            color: #155cbf;
+        }
+
+        
+        @media screen and (max-width: 450px) {
+            .container {
+                width: 90%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Welcome Back! <br> RAISE</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Login">
+        </form>
+        <!-- <a href="#" class="forgot-password">Forgot Password?</a> -->
+    </div>
+</body>
+</html>

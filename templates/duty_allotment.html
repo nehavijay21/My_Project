@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load custom_filters %}
+
+{% block title %}Duty Allotment{% endblock %}
+
+{% block content %}
+<div class="container mt-5" style="max-width: 900px;">
+    <h2 class="text-center mb-4" style="font-family: 'Poppins', Georgia, 'Times New Roman', Times, serif; color: #000000; font-size: 2rem;">Duty Allotment</h2>
+
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="table-primary">
+            <tr>
+                <th scope="col" style="text-align: center;">Date</th>
+                <th scope="col" style="text-align: center;">Number of Duties Assigned</th>
+                <th scope="col" style="text-align: center;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for exam in exam_dates %}
+            <tr>
+                <td style="text-align: center;">{{ exam.date }}</td>
+                <td style="text-align: center;">{{ duty_counts|get_item:exam.date }}</td>
+                <td style="text-align: center;">
+                    <a href="{% url 'duty_list' %}?date={{ exam.date|date:'Y-m-d' }}" class="btn btn-sm btn-primary" style="width: 120px;">Manage Duties</a>
+
+
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

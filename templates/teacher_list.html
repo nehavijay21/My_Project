@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+
+{% block content %}
+<div class="container mt-5" style="max-width: 900px;">
+    <h2 class="text-center mb-4" style="font-family: 'Poppins', Georgia, 'Times New Roman', Times, serif; color: #000000; font-size: 2rem;">Manage Teachers</h2>
+    <div class="d-flex justify-content-between mb-3">
+        <!-- <h4 class="text-primary">Room List</h4> -->
+        <a href="{% url 'add_teacher' %}" class="btn btn-primary">Add New Teacher</a>
+    </div>
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="table-primary">
+                <tr>
+                    <th scope="col"style="text-align:center;">SI.No</th>
+                    <th scope="col"style="text-align:center;">First Name</th>
+                    <th scope="col"style="text-align:center;">Last Name</th>
+                    <th scope="col"style="text-align:center;">Email ID</th>
+                    <th scope="col"style="text-align:center;">Username</th>
+                    <th scope="col"style="text-align:center;">Department</th>
+                    <th scope="col"style="text-align:center;">Designation</th>
+                    <th scope="col"style="text-align:center;">Role</th>
+                    <th scope="col"style="text-align:center;">Phone Number</th>
+                    <th scope="col"style="text-align:center;">Gender</th>
+                    <th scope="col" style="text-align: center;">Actions</th>
+                </tr>
+            </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr>
+                <td style="text-align: center;">{{ forloop.counter }}</td>
+                <td>{{teacher.user.first_name}}</td>
+                <td>{{ teacher.user.last_name }}</td>
+                <td>{{ teacher.user.email }}</td>
+                <td>{{ teacher.user.username }}</td>
+                <td>{{ teacher.dept}}</td>
+                <td>{{ teacher.designation }}</td>
+                <td>{{ teacher.role }}</td>
+                <td>{{ teacher.phone_num }}</td>
+                <td>{{ teacher.gender }}</td>
+                <td class="text-center" >
+                    <div class="d-flex justify-content center gap-2">
+                        <a href="{% url 'edit_teacher' teacher.pk %}" class="btn btn-sm btn-outline-warning " style="width: 60px; height: 35px;">Edit</a>
+                        <a href="{% url 'delete_teacher' teacher.pk %}" class="btn btn-sm btn-outline-danger" style="width: 60px; height: 35px;">Delete</a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+{% endblock %}

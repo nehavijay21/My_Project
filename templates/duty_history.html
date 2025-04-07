@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Duty History{% endblock %}
+
+{% block content %}
+<div class="container mt-5" style="max-width: 900px;">
+    <h2 class="text-center mb-4" style="font-family: 'Poppins', Georgia, 'Times New Roman', Times, serif; color: #000000; font-size: 2rem;">
+        Duty History
+    </h2>
+
+    <table class="table table-striped table-hover table-bordered">
+        <!-- Header with Blue background -->
+        <thead class="table-primary">
+            <tr>
+                <th scope="col" style="text-align: center;">SI.No</th>
+                <th scope="col" style="text-align: center;">Date</th>
+                <th scope="col" style="text-align: center;">Room</th>
+                <th scope="col" style="text-align: center;">Hours</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for duty in duty_records %}
+            <tr>
+                <td style="text-align: center;">{{ forloop.counter }}</td>
+                <td style="text-align: center;">{{ duty.date }}</td>
+                <td style="text-align: center;">{{ duty.room.room_no }}</td>
+                <td style="text-align: center;">{{ duty.hours }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="text-center text-muted">No duty history available</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endblock %}
