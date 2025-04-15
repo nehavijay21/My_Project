@@ -1,0 +1,722 @@
+"course_id","course_title","course_code","lab_theory","course_type_id","dept_id","semester","syllabus_intro_year","credits","total_internal","total_external","grad_level"
+1,Physics Primers,"1B01PHY",T,1,11,1,2014,3,10,40,UG
+2,Electronics-I,"2B02PHY",T,1,11,2,2014,3,10,40,UG
+3,Allied Physics,"3B03PHY",T,1,11,3,2014,3,10,40,UG
+4,Optics,"4B04PHY",T,1,11,4,2014,3,10,40,UG
+5,Practical 1,"4B05PHY",L,1,11,1,2014,0,0,0,UG
+6,Practical 1,"4B05PHY",L,1,11,2,2014,0,0,0,UG
+7,Practical 1,"4B05PHY",L,1,11,3,2014,0,0,0,UG
+8,Practical 1,"4B05PHY",L,1,11,4,2014,4,10,40,UG
+9,Electrodynamics-I ,"5B06PHY",T,1,11,5,2014,3,10,40,UG
+10,Thermal Physics,"5B07PHY",T,1,11,5,2014,3,10,40,UG
+11,Classical Mechanics & Relativity,"5B08PHY",T,1,11,5,2014,3,10,40,UG
+12,Python Programming,"5B09PHY",T,1,11,5,2014,3,10,40,UG
+13,"Atomic, Nuclear and  Particle Physics","5B10PHY",T,1,11,5,2014,3,10,40,UG
+14,Electrodynamics- II,"6B11PHY",T,1,11,6,2014,3,10,40,UG
+15,Photonics & Spectroscopy,"6B12PHY",T,1,11,6,2014,3,10,40,UG
+16,Quantum Mechanics,"6B13PHY",T,1,11,6,2014,3,10,40,UG
+17,Electronics-II,"6B14PHY",T,1,11,6,2014,3,10,40,UG
+18,Plasma Physics,"6B15PHY(A)",T,1,11,6,2014,3,10,40,UG
+19,Astronomy & Astrophysics,"6B15PHY(B)",T,1,11,6,2014,3,10,40,UG
+20,Atmospheric Physics,"6B15PHY(C)",T,1,11,6,2014,3,10,40,UG
+21,Nanoscience,"6B15PHY(D)",T,1,11,6,2014,3,10,40,UG
+22,Material Science,"6B15PHY(E)",T,1,11,6,2014,3,10,40,UG
+23,Computational Physics,"6B15PHY(F)",T,1,11,6,2014,3,10,40,UG
+24,Practical 2,"6B16PHY",L,1,11,5,2014,0,0,0,UG
+25,Practical 2,"6B16PHY",L,1,11,6,2014,4,10,40,UG
+26,Practical 2 & 3,"6B16/17PHY",L,1,11,5,2014,0,0,0,UG
+27,Practical 3,"6B17PHY",L,1,11,6,2014,4,10,40,UG
+28,Project,"6B18PHY",P,1,11,6,2014,4,10,40,UG
+29,Complementary Physics I (Mechanics),"1C01PHY",T,3,11,1,2014,2,8,32,UG
+30,"Complementary Physics II (Electricity, Magnetism and Thermal Physics)","2C02PHY",T,3,11,2,2014,2,8,32,UG
+31,Complementary Physics III (Optics and Photonics),"3C03PHY",T,3,11,3,2014,2,8,32,UG
+32,Complementary Physics IV (Modern Physics and Electronics),"4C04PHY",T,3,11,4,2014,2,8,32,UG
+33,Complementary Physics Practical,"4C05PHY",L,3,11,1,2014,0,0,0,UG
+34,Complementary Physics Practical,"4C05PHY",L,3,11,2,2014,0,0,0,UG
+35,Complementary Physics Practical,"4C05PHY",L,3,11,3,2014,0,0,0,UG
+36,Complementary Physics Practical,"4C05PHY",L,3,11,4,2014,4,8,32,UG
+37,Environmental Physics,"5D01PHY(A)",T,2,11,5,2014,2,5,20,UG
+38,Joy of Star Watching,"5D01PHY(B)",T,2,11,5,2014,2,5,20,UG
+39,Disaster Management,"5D01PHY(C)",T,2,11,5,2014,2,5,20,UG
+40,Biophysics,"5D01PHY(D)",T,2,11,5,2014,2,5,20,UG
+41,Fundamentals of Computers & Programming Languages,"1C01CSC",T,3,9,1,2014,2,8,32,UG
+42,Programming in C,"2C02CSC",T,3,9,2,2014,2,8,32,UG
+43,Database Management System,"3C03CSC",T,3,9,3,2014,2,8,32,UG
+44,Visual Programming,"4C04CSC",T,3,9,4,2014,3,8,32,UG
+45,"Lab-I (C Programming, DBMS & Visual Basic)","4C05CSC",L,3,9,1,2014,0,0,0,UG
+46,"Lab-I (C Programming, DBMS & Visual Basic)","4C05CSC",L,3,9,2,2014,0,0,0,UG
+47,"Lab-I (C Programming, DBMS & Visual Basic)","4C05CSC",L,3,9,3,2014,0,0,0,UG
+48,"Lab-I (C Programming, DBMS & Visual Basic)","4C05CSC",L,3,9,4,2014,2,8,32,UG
+49,COMN - Kavitha Aur Kahani,"1A07HIN",T,4,3,1,2014,4,10,40,UG
+50,COMN - Vyakaran Tatha Rachana,"2A08HIN",T,4,3,2,2014,4,10,40,UG
+51,COMN - Gadya Ke Vividh Roop,"3A09HIN",T,4,3,3,2014,4,10,40,UG
+52,COMN - Natak Aur Upanyas,"4A10HIN",T,4,3,4,2014,4,10,40,UG
+53,COMN - Srujanatmak Sahitya,"1A07-1HIN",T,4,3,1,2014,4,10,40,UG
+54,COMN - Sampreshaneey Hindi,"2A08-1HIN",T,4,3,2,2014,4,10,40,UG
+55,COMN - Aadhunik Sahitya,"1A07-2HIN",T,4,3,1,2014,4,10,40,UG
+56,COMN - Vyavaharik Hindi,"2A08-2HIN",T,4,3,2,2014,4,10,40,UG
+57,Differential Calculus,"1B01MAT",T,1,10,1,2014,4,12,48,UG
+58,Integral Calculus,"2B02MAT",T,1,10,2,2014,4,12,48,UG
+59,Elements of Mathematics I,"3B03MAT",T,1,10,3,2014,4,12,48,UG
+60,Elements of Mathematics II,"4B04MAT",T,1,10,4,2014,4,12,48,UG
+61,Real Analysis,"5B05MAT",T,1,10,5,2014,4,12,48,UG
+62,Abstract Algebra,"5B06MAT",T,1,10,5,2014,4,12,48,UG
+63,"Differential Equations,Laplace Transform and Fourier Series","5B07MAT",T,1,10,5,2014,4,12,48,UG
+64,Vector Calculus,"5B08MAT",T,1,10,5,2014,4,12,48,UG
+65,Graph Theory,"5B09MAT",T,1,10,5,2014,4,12,48,UG
+66,Linear Algebra,"6B10MAT",T,1,10,6,2014,4,12,48,UG
+67,Numerical Methods and Partial Differential Equations,"6B11MAT",T,1,10,6,2014,4,12,48,UG
+68,Complex Analysis,"6B12MAT",T,1,10,6,2014,4,12,48,UG
+69,Mathematical Analysis and Topology,"6B13MAT",T,1,10,6,2014,4,12,48,UG
+70,Operations Research,"6B14AMAT",T,1,10,6,2014,4,12,48,UG
+71,Mathematical Economics,"6B14BMAT",T,1,10,6,2014,4,12,48,UG
+72,Classical Mechanics,"6B14CMAT",T,1,10,6,2014,4,12,48,UG
+73,Programming in Python,"6B14DMAT",T,1,10,6,2014,4,12,48,UG
+74,Project,"6B15MAT",T,1,10,6,2014,4,12,48,UG
+75,Business Mathematics,"5D01MAT",T,2,10,5,2014,2,5,20,UG
+76,Astronomy,"5D02MAT",T,2,10,5,2014,2,5,20,UG
+77,Quantitative Arithmetic and Reasoning,"5D03MAT",T,2,10,5,2014,2,5,20,UG
+78,Linear Programming,"5D04MAT",T,2,10,5,2014,2,5,20,UG
+79,Mathematics for Physics and Electronics I,"1C01MAT-PH",T,3,10,1,2014,3,10,40,UG
+80,Mathematics for Physics and Electronics II,"2C02MAT-PH",T,3,10,2,2014,3,10,40,UG
+81,Mathematics for Physics and Electronics III,"3C03MAT-PH",T,3,10,3,2014,3,10,40,UG
+82,Mathematics for Physics and Electronics IV,"4C04MAT-PH",T,3,10,4,2014,3,10,40,UG
+83,Mathematics for Chemistry I,"1C01MAT-CH",T,3,10,1,2014,3,10,40,UG
+84,Mathematics for Chemistry II,"2C02MAT-CH",T,3,10,2,2014,3,10,40,UG
+85,Mathematics for Chemistry III,"3C03MAT-CH",T,3,10,3,2014,3,10,40,UG
+86,Mathematics for Chemistry IV,"4C04MAT-CH",T,3,10,4,2014,3,10,40,UG
+87,Mathematics for Statistics I,"1C01MAT-ST",T,3,10,1,2014,3,10,40,UG
+88,Mathematics for Statistics II,"2C02MAT-ST",T,3,10,2,2014,3,10,40,UG
+89,Mathematics for Statistics III,"3C03MAT-ST",T,3,10,3,2014,3,10,40,UG
+90,Mathematics for Statistics IV,"4C04MAT-ST",T,3,10,4,2014,3,10,40,UG
+91,Descriptive Statistics,"1B01STA",T,1,12,1,2014,3,12,48,UG
+92,Probability Theory,"2B02STA",T,1,12,2,2014,3,12,48,UG
+93,Probablity Distributions,"3B03STA",T,1,12,3,2014,3,12,48,UG
+94,Statistical Inference I,"4B04STA",T,1,12,4,2014,4,12,48,UG
+95,Statistical Inference II,"5B05STA",T,1,12,5,2014,4,12,48,UG
+96,Mathematical Analysis I,"5B06STA",T,1,12,5,2014,4,12,48,UG
+97,Statistics Using R,"5B07STA",T,1,12,5,2014,4,12,48,UG
+98,Sampling Techniques,"5B08STA",T,1,12,5,2014,4,12,48,UG
+99,Statistical Quality Control And Operations Research,"5B09STA",T,1,12,5,2014,4,12,48,UG
+100,Mathematical Analysis II,"6B10STA",T,1,12,6,2014,4,12,48,UG
+101,"Time Series, Index Numbers And Vital Statistics","6B11STA",T,1,12,6,2014,4,12,48,UG
+102,Design of Experiments,"6B12STA",T,1,12,6,2014,4,12,48,UG
+103,Actuarial Statistics,"6B13STA",T,1,12,6,2014,4,12,48,UG
+104,Practicals Using R,"6B14STA",L,1,12,6,2014,4,12,48,UG
+105,Project,"6B15STA",P,1,12,6,2014,3,12,48,UG
+106,Basics of Statistics,"5D01STA",T,2,12,5,2014,2,5,20,UG
+107,Sampling Techniques,"5D02STA",T,2,12,5,2014,2,5,20,UG
+108,Computer Oriented Data Analysis,"5D03STA",T,2,12,5,2014,2,5,20,UG
+109,Basics Statistics,"1C01STA",T,3,12,1,2014,3,10,40,UG
+110,Probability Theory and Random Variables,"2C02STA",T,3,12,2,2014,3,10,40,UG
+111,Standard Probability Distributions,"3C03STA",T,3,12,3,2014,3,10,40,UG
+112,Statistical Inference,"4C04STA",T,3,12,4,2014,3,10,40,UG
+113,Basic Tools For Economic Analysis I,"5B07ECO",T,3,12,5,2014,4,10,40,UG
+114,Basic Tools For Economic Analysis II,"6B12ECO",T,3,12,6,2014,4,10,40,UG
+115,Theoretical and Inorganic Chemistry,"1B01PCH",T,1,8,1,2014,3,10,40,UG
+116,Analytical Chemistry,"2B02PCH",T,1,8,2,2014,3,10,40,UG
+117,Organic Chemistry I,"3B04CHE",T,1,8,3,2014,3,10,40,UG
+118,Organic Chemistry II,"4B06CHE",T,1,8,4,2014,3,10,40,UG
+119,Core Course Practicals 1 Volumetric Analysis,"3B03CHE",L,1,8,3,2014,0,0,0,UG
+120,Core Course Practicals 1 Volumetric Analysis,"4B03CHE",L,1,8,4,2014,2,10,40,UG
+121,Core Course Practicals 2 Core Course Practicals 2 Inorganic Qualitative Analysis,"3B05CHE",L,1,8,3,2014,0,0,0,UG
+122,Core Course Practicals 2 Core Course Practicals 2 Inorganic Qualitative Analysis,"4B05CHE",L,1,8,4,2014,2,10,40,UG
+123,Inorganic Chemistry I,"5B07CHE",T,1,8,5,2014,4,10,40,UG
+124,Inorganic Chemistry II,"5B08CHE",T,1,8,5,2014,4,10,40,UG
+125,Physical Chemistry I,"5B09CHE",T,1,8,5,2014,4,10,40,UG
+126,Physical Chemistry II,"5B10CHE",T,1,8,5,2014,4,10,40,UG
+127,Organic Chemistry III,"6B14CHE",T,1,8,6,2014,4,10,40,UG
+128,Physical Chemistry III,"6B15CHE",T,1,8,6,2014,3,10,40,UG
+129,Physical Methods in Chemistry,"6B16CHE",T,1,8,6,2014,3,10,40,UG
+130,Environmental Chemistry,"6B17CHE-A",T,1,8,6,2014,3,10,40,UG
+131,Applied Chemistry,"6B17CHE-B",T,1,8,6,2014,3,10,40,UG
+132,Polymer Chemistry,"6B17CHE-C",T,1,8,6,2014,3,10,40,UG
+133,Nano Chemistry,"6B17CHE-D",T,1,8,6,2014,3,10,40,UG
+134,Core Course Practicals 3 Gravimetric Analysis,"5B11CHE",L,1,8,5,2014,0,0,0,UG
+135,Core Course Practicals 3 Gravimetric Analysis,"6B11CHE",L,1,8,6,2014,3,10,40,UG
+136,Core Course Practicals 4 Organic Chemistry,"5B12CHE",L,1,8,5,2014,0,0,0,UG
+137,Core Course Practicals 4 Organic Chemistry,"6B12CHE",L,1,8,6,2014,3,10,40,UG
+138,Core Course Practicals 5 Physical Chemistry,"6B18CHE",L,1,8,6,2014,3,10,40,UG
+139,Industrial Visit,"5B13CHE",I,1,8,5,2014,2,0,5,UG
+140,Project,"6B13CHE",P,1,8,6,2014,2,4,16,UG
+141,Chemistry In Service To Man,"5D01CHE",T,2,8,5,2014,2,5,20,UG
+142,Drugs-Use & Abuse,"5D02CHE",T,2,8,5,2014,2,5,20,UG
+143,Environmental Studies,"5D03CHE",T,2,8,5,2014,2,5,20,UG
+144,Nanomaterials,"5D04CHE",T,2,8,5,2014,2,5,20,UG
+145,Chemistry (For Physical & Biological Sciences),"1C01CHE",T,3,8,1,2014,2,8,32,UG
+146,Chemistry (For Physical & Biological Sciences),"2C02CHE",T,3,8,2,2014,2,8,32,UG
+147,Chemistry (For Biological Science),"3C03CHE(BS",T,3,8,3,2014,2,8,32,UG
+148,Chemistry (For Physical Science),"3C03CHE(PS",T,3,8,3,2014,2,8,32,UG
+149,Chemistry (For Biological Science),"4C04CHE(BS",T,3,8,4,2014,2,8,32,UG
+150,Chemistry (For Physical Science),"4C04CHE(PS",T,3,8,4,2014,2,8,32,UG
+151,Complementary Chemistry Practical,"4C05CHE",L,3,8,1,2014,0,0,0,UG
+152,Complementary Chemistry Practical,"4C05CHE",L,3,8,2,2014,0,0,0,UG
+153,Complementary Chemistry Practical,"4C05CHE",L,3,8,3,2014,0,0,0,UG
+154,Complementary Chemistry Practical,"4C05CHE",L,3,8,4,2014,4,8,32,UG
+155,Protista and Non Chordata-I,"1B01ZLG",T,1,13,1,2014,3,10,40,UG
+156,Practical-I,"4B01ZLG-P",L,1,13,1,2014,0,0,0,UG
+157,Protista and Non Chordata-II,"2B02ZLG",T,1,13,2,2014,3,10,40,UG
+158,Practical-I,"4B01ZLG-P",L,1,13,2,2014,0,0,0,UG
+159,Chordata-I,"3B03ZLG",T,1,13,3,2014,3,10,40,UG
+160,Practical-I,"4B01ZLG-P",L,1,13,3,2014,0,0,0,UG
+161,Chordata-II & Comparative Anatomy,"4B04ZLG",T,1,13,4,2014,3,10,40,UG
+162,Practical-I,"4B01ZLG-P",L,1,13,4,2014,4,10,40,UG
+163,Biochemistry & Endocrinology,"5B05ZLG",T,1,13,5,2014,3,10,40,UG
+164,"Biophysics,Biostatistics & Methodology","5B06ZLG",T,1,13,5,2014,3,10,40,UG
+165,Cell Biology & Immunology,"5B07ZLG",T,1,13,5,2014,3,10,40,UG
+166,Hereditary Science,"5B08ZLG",T,1,13,5,2014,3,10,40,UG
+167,Comparative Animal Physiology & Human Physiology.,"5B09ZLG",T,1,13,5,2014,3,10,40,UG
+168,Practical-II,"6B02ZLG-P",L,1,13,5,2014,0,0,0,UG
+169,Molecular Biology & Bio Informatics,"6B10ZLG",T,1,13,6,2014,3,10,40,UG
+170,Environmental Science & Conservation Biology,"6B11ZLG",T,1,13,6,2014,3,10,40,UG
+171,"Developmental Biology, Teratology & Gerontology","6B12ZLG",T,1,13,6,2014,3,10,40,UG
+172,"Ethology, Evolution & Zoogeography","6B13ZLG",T,1,13,6,2014,3,10,40,UG
+173,Applied Zoology,"6B14ZLG",T,1,13,6,2014,3,10,40,UG
+174,Practical-II,"6B02ZLG-P",L,1,13,6,2014,3,10,40,UG
+175,Practical-III,"6B03ZLG-P",L,1,13,6,2014,4,10,40,UG
+176,Project,"6B15ZLG",P,1,13,6,2014,2,5,20,UG
+177,Nutrition and Health,"5D01ZLG",T,2,13,5,2014,2,5,20,UG
+178,Apiculture and Sericulture,"5D02ZLG",T,2,13,5,2014,2,5,20,UG
+180,Reproductive Health and Sex Education,"5D04ZLG",T,2,13,5,2014,2,5,20,UG
+181,Diversity of Life-I,"1C01ZLG",T,3,13,1,2014,2,8,32,UG
+182,Practical,"4C05ZLG-P",L,3,13,1,2014,0,0,0,UG
+183,Diversity of Life-II,"2C02ZLG",T,3,13,2,2014,2,8,32,UG
+184,Practical,"4C05ZLG-P",L,3,13,2,2014,0,0,0,UG
+185,Agriculture And Forest Entomology,"3C03ZLG",T,3,13,3,2014,2,8,32,UG
+186,Practical,"4C05ZLG-P",L,3,13,3,2014,0,0,0,UG
+187,Medical Zoology,"4C04ZLG",T,3,13,4,2014,2,8,32,UG
+188,Practical,"4C05ZLG-P",L,3,13,4,2014,4,8,32,UG
+189,Environmental Science and Phytogeography,"1B01BOT/PL",T,1,7,1,2014,3,10,40,UG
+190,Angiosperm Anatomy and Microtechnique,"2B02BOT/PL",T,1,7,2,2014,3,10,40,UG
+191,"Phycology, Mycology and Lichenology","3B03BOT/PL",T,1,7,3,2014,3,10,40,UG
+192,Plantation Science,"3A11PLS",T,1,7,3,2014,3,8,32,UG
+193,Horticulture,"3A12PLS",T,1,7,3,2014,3,8,32,UG
+194,"Bryology, Pteridology, Gymnosperms and Paleobotany","4B04BOT/PL",T,1,7,4,2014,3,10,40,UG
+195,Herbal Science,"4A13PLS",T,1,7,4,2014,3,8,32,UG
+196,Plantation Management,"4A14PLS",T,1,7,4,2014,3,8,32,UG
+197,Core Practical I,"4B05BOT/PL",L,1,7,4,2014,4,15,60,UG
+198,General Practical 1,"4A15PLS",L,1,7,4,2014,4,8,30,UG
+199,"Taxonomy, Morphology and Economic Botany","5B06BOT/PL",T,1,7,5,2014,4,10,40,UG
+200,Microbiology and Plant Pathology,"5B07BOT/PL",T,1,7,5,2014,4,10,40,UG
+201,Plant Physiology and Biochemistry,"5B08BOT/PL",T,1,7,5,2014,4,10,40,UG
+202,"Bioinformatics, Instrumentation and Research Methodology","5B09BOT/PL",T,1,7,5,2014,3,10,40,UG
+203,"Plant Tissue culture, Embryology and Palynology","6B10BOT/PL",T,1,7,6,2014,3,10,40,UG
+204,"Genetics, Biostatitics and Evolution","6B11BOT/PL",T,1,7,6,2014,4,10,40,UG
+205,Biotechnology and Crop improvement,"6B12BOT/PL",T,1,7,6,2014,4,10,40,UG
+206,Cell and Molecular Biology,"6B13BOT/PL",T,1,7,6,2014,4,10,40,UG
+207,Core Practical II,"6B14BOT/PL",L,1,7,6,2014,4,15,60,UG
+208,Core Practical III,"6B15BOT/PL",L,1,7,6,2014,4,15,60,UG
+209,Project,"6B16BOT/PL",L,1,7,6,2014,2,5,20,UG
+210,Diversity of Life-Microbes & Thallophytes,"1C01BOT/PL",L,3,7,1,2014,2,8,32,UG
+211,"Archaegoniatae, Palaeobotany And Reproduction In Angiosperms","2C02BOT/PL",L,3,7,2,2014,2,8,32,UG
+212,"Angiosperms–Morphology, Systematics, Utility, Plant Breeding and Plant Pathology","3C03BOT/PL",L,3,7,3,2014,2,8,32,UG
+213,Angiosperm - Anatomy and Physiology,"4C04BOT/PL",L,3,7,4,2014,2,8,32,UG
+214,Practical Paper - I,"4C05BOT/PL",L,3,7,4,2014,2,8,30,UG
+215,Mushroom Cultivation and Marketing,"5D01BOT/PL",L,2,7,5,2014,2,5,20,UG
+216,Medicinal Plants,"5D02BOT/PL",L,2,7,5,2014,2,5,20,UG
+217,Environmental Science,"5D03BOT/PL",L,2,7,5,2014,2,5,20,UG
+218,Micro Economic Analysis-I,"1B01ECO",T,1,1,1,2014,5,10,40,UG
+219,Micro Economic Analysis-II,"2B02ECO",T,1,1,2,2014,4,10,40,UG
+220,Macro Economic Analysis-I,"3B03ECO",T,1,1,3,2014,5,10,40,UG
+221,International Economics,"3B04ECO",T,1,1,3,2014,4,10,40,UG
+222,Macro Economic Analysis-II,"4B05ECO",T,1,1,4,2014,4,10,40,UG
+223,Environmental Economics,"4B06ECO",T,1,1,4,2014,4,10,40,UG
+224,Basic Tools for Economic Analysis-I,"5B07ECO",T,1,1,5,2014,4,10,40,UG
+225,Alternative Economics,"5B08ECO",T,1,1,5,2014,4,10,40,UG
+226,Research Methods and Techniques for Economic Analysis,"5B09ECO",T,1,1,5,2014,4,10,40,UG
+227,Development Economics,"5B10ECO",T,1,1,5,2014,4,10,40,UG
+228,Economics of Banking and Finance,"5B11ECO",T,1,1,5,2014,4,10,40,UG
+229,Basic Tools for Economic Analysis-II,"6B12ECO",T,1,1,6,2014,4,10,40,UG
+230,Central Themes in Indian Economy,"6B13ECO",T,1,1,6,2014,4,10,40,UG
+231,Public Economics,"6B14ECO",T,1,1,6,2014,4,10,40,UG
+232,Basic Econometric Analysis,"6B15ECO",T,1,1,6,2014,4,10,40,UG
+233,Project,"6B16ECO",T,1,1,6,2014,4,10,40,UG
+234,Economics of Travel and Tourism,"5D01ECO",T,2,1,5,2014,2,5,20,UG
+235,Kerala Economy,"5D02ECO",T,2,1,5,2014,2,5,20,UG
+236,Economics of Share Market,"5D03ECO",T,2,1,5,2014,2,5,20,UG
+237,Introductory Economics-I,"1C09ECO",T,3,1,1,2014,4,10,40,UG
+238,Introductory Economics-II,"2C10ECO",T,3,1,2,2014,4,10,40,UG
+239,Population Studies,"1C05ECO",T,3,1,1,2014,4,10,40,UG
+240,Regional Economics,"2C06ECO",T,3,1,2,2014,4,10,40,UG
+241,Sahithyaganangal,"1A07MAL",T,4,5,1,2014,4,10,40,UG
+242,Gadyaroopangal,"2A08MAL",T,4,5,2,2014,4,10,40,UG
+243,Malayalakavitha,"3A09MAL",T,4,5,3,2014,4,10,40,UG
+244,Rachana-Vivarthanam,"4A10MAL",T,4,5,4,2014,4,10,40,UG
+245,Sahithyaroopangal,"1A07-1MAL",T,4,5,1,2014,4,10,40,UG
+246,Gadyamathrukakal,"2A08-1MAL",T,4,5,2,2014,4,10,40,UG
+247,Sahithyavum Vivarthanvaum,"1A07-2MAL",T,4,5,1,2014,4,10,40,UG
+248,Sahithyavibhagangal,"2A08-2MAL",T,4,5,2,2014,4,10,40,UG
+249,Chalachithra Padanangal,"5D01MAL",T,2,5,5,2014,2,5,20,UG
+250,Malayalam Computing,"5D02MAL",T,2,5,5,2014,2,5,20,UG
+251,Keraleeyakalakal,"5D03MAL",T,2,5,5,2014,2,5,20,UG
+252,Praacheena Madhyakaala Kavitha,"1B01MAL",T,1,5,1,2014,4,10,40,UG
+253,Malayala Kavitha - Aadhunikam - Aadhunikaanantharam,"2B02MAL",T,1,5,2,2014,4,10,40,UG
+254,Cherukadhaasahithyam,"3B03MAL",T,1,5,3,2014,4,10,40,UG
+255,Malayala Sahityavimarshanam,"3B04MAL",T,1,5,3,2014,5,10,40,UG
+256,Madhyama Parichayam,"4B05MAL",T,1,5,4,2014,4,10,40,UG
+257,Paashchathya Sahithya Sidhaanthangal,"4B06MAL",T,1,5,4,2014,5,10,40,UG
+258,Bhaasha Shaasthravaum Vyakaranavum,"5A07MAL",T,1,5,5,2014,4,10,40,UG
+259,Novel Sahithyam,"5A08MAL",T,1,5,5,2014,4,10,40,UG
+260,Pourasthya Sahithya Sidhaanthangal,"5B09MAL",T,1,5,5,2014,4,10,40,UG
+261,Kerala Samskaaram,"5B10MAL",T,1,5,5,2014,4,10,40,UG
+262,Nadodi Vijnaaneeyam,"5B11MAL",T,1,5,5,2014,4,10,40,UG
+263,Arangum Porulum,"6B12MAL",T,1,5,6,2014,4,10,40,UG
+264,Parisththi Dalith Sthreevaadam,"6B13MAL",T,1,5,6,2014,4,10,40,UG
+265,Pothu Vivara Shaasthram,"6B14MAL",T,1,5,6,2014,4,10,40,UG
+266,Gadya Sahithyam,"6B15MAL",T,1,5,6,2014,4,10,40,UG
+267,Project,"6B16MAL",T,1,5,6,2014,2,5,20,UG
+268,Malayalasahithya Charithram - Part 1,"1C01MAL",T,3,5,1,2014,2,5,20,UG
+269,Malayalasahithya Charithram - Part 2,"4C04MAL",T,3,5,4,2014,2,5,20,UG
+270,Polymer Chemistry I,"3A11PCH",T,1,8,3,2014,3,8,32,UG
+271,Polymer Chemistry II,"3A12PCH",T,1,8,3,2014,3,8,32,UG
+272,Polymer Chemistry II - Practical,"3A12(A)PCH",L,1,8,3,2014,0,0,0,UG
+273,Polymer Chemistry III,"4A13PCH",T,1,8,4,2014,3,8,32,UG
+274,Polymer Chemistry III - Practical,"4A13(A)PCH",L,1,8,4,2014,4,8,32,UG
+275,Polymer Chemistry IV,"4A14PCH",T,1,8,4,2014,3,8,32,UG
+276,Communicative English I,"1A01ENG",T,4,2,1,2014,4,10,40,UG
+277,Language Through Literature I,"1A02ENG",T,4,2,1,2014,3,10,40,UG
+278,Communicative English II,"2A03ENG",T,4,2,2,2014,4,10,40,UG
+279,Language Through Literature II,"2A04ENG",T,4,2,2,2014,4,10,40,UG
+280,Reading in Prose and Poetry,"3A05ENG",T,4,2,3,2014,4,10,40,UG
+281,Reading in Fiction and Drama,"4A06ENG",T,4,2,4,2014,4,10,40,UG
+282,Management Concepts & Principles,"1B01COM",T,1,14,1,2014,2,10,40,UG
+283,Financial Accounting,"1B02COM",T,1,14,1,2014,3,10,40,UG
+284,Business Statistics,"1C01COM",T,3,14,1,2014,3,10,40,UG
+285,Principles of Marketing,"2B03COM",T,1,14,2,2014,2,10,40,UG
+286,Human Resource Management,"2B04COM",T,1,14,2,2014,2,10,40,UG
+287,Quantitative Techniques for Business Decision,"2C02COM",T,3,14,2,2014,4,10,40,UG
+288,Disaster Management,"3A11COM",T,1,14,3,2014,4,10,40,UG
+289,Numerical Skills for Business,"3A12COM",T,1,14,3,2014,4,10,40,UG
+290,Basics of Research Methodology,"3C03COM",T,3,14,3,2014,3,10,40,UG
+291,Advanced Accounting,"3B05COM",T,1,14,3,2014,4,10,40,UG
+292,Co-Operative Principles,"3B06COM",T,1,14,3,2014,3,10,40,UG
+293,Business Regulatory Framework,"3C04COM",T,1,14,3,2014,3,10,40,UG
+294,Entrepreneurship,"4A13COM",T,1,14,4,2014,4,10,40,UG
+295,Environment Studies,"4A14COM",T,1,14,4,2014,4,10,40,UG
+296,Income Tax Law & Practice I,"4B07COM",T,1,14,4,2014,4,10,40,UG
+297,Informatics Skills,"4B08COM",T,1,14,4,2014,3,10,40,UG
+298,Investment Management,"4B09COM",T,1,14,4,2014,3,10,40,UG
+299,Corporate Law & Business Regulation,"4C05COM",T,3,14,4,2014,3,10,40,UG
+300,Cost Accounting,"5B10COM",T,1,14,5,2014,4,10,40,UG
+301,Corporate Accounting,"5B11COM",T,1,14,5,2014,4,10,40,UG
+302,Auditing,"5B12COM",T,1,14,5,2014,3,10,40,UG
+303,Income Tax Law & Practice II,"5B13COM",T,1,14,5,2014,4,10,40,UG
+304,Co-Operative Laws,"5B14COM",T,1,14,5,2014,3,10,40,UG
+305,Basic Accounting,"5D01COM",T,2,14,5,2014,2,10,40,UG
+306,Management Accounting,"6B15COM",T,1,14,6,2014,4,10,40,UG
+307,International Business,"6B16COM",T,1,14,6,2014,4,10,40,UG
+308,Modern Banking,"6B17COM",T,1,14,6,2014,4,10,40,UG
+309,Financial Markets & Services,"6B18COM",T,1,14,6,2014,3,10,40,UG
+310,Market Research,"6B19COM",T,1,14,6,2014,3,10,40,UG
+311,Project,"6B20COM",T,2,14,6,2014,2,10,40,UG
+312,Social Formations in Early India,"1B01HIS",T,1,4,1,2014,5,10,40,UG
+313,Social Formations in India: Continuity and Change,"2B02HIS",T,1,4,2,2014,4,10,40,UG
+314,Methodology and Perspectives of Social Science,"3B03HIS",T,1,4,3,2014,4,10,40,UG
+315,Culture in Transition,"3B04HIS",T,1,4,3,2014,4,10,40,UG
+316,Kerala History and Culture in Pre Modern Period,"4B05HIS",T,1,4,4,2014,4,10,40,UG
+317,Ideologies and Revolutions in the Modern World,"4B06HIS",T,1,4,4,2014,4,10,40,UG
+318,Social Formation in Medieval India,"5B07HIS",T,1,4,5,2014,4,10,40,UG
+319,Social Movements and Political Awakening in Modern Kerala,"5B08HIS",T,1,4,5,2014,4,10,40,UG
+320,Historiography,"5B09HIS",T,1,4,5,2014,4,10,40,UG
+321,Method and Writing of History,"5B10HIS",T,1,4,5,2014,4,10,40,UG
+322,Archival Studies and Social Informatics,"5B11HIS",T,1,4,5,2014,4,10,40,UG
+323,Indian Historiography,"6B12HIS",T,1,4,6,2014,4,10,40,UG
+324,Problems in Contemporary World,"6B13HIS",T,1,4,6,2014,4,10,40,UG
+325,Colonialism and Transformation of Indian Society,"6B14HIS",T,1,4,6,2014,5,10,40,UG
+326,Freedom Struggle in India,"6B15HIS",T,1,4,6,2014,4,10,40,UG
+327,Project,"6B16HIS",T,1,4,6,2014,4,10,40,UG
+328,Social Reform Movement In Kerala,"5D01HIS",T,2,4,5,2014,2,10,40,UG
+329,Indias Struggle For Freedom,"5D02HIS",T,2,4,5,2014,2,10,40,UG
+330,Culutural Heritage of North Malabar,"5D03HIS",T,2,4,5,2014,2,10,40,UG
+331,India Under Colonial Rule,"3C07HIS",T,3,4,3,2014,4,10,40,UG
+332,Indian National Movement,"4C08HIS",T,3,4,4,2014,4,10,40,UG
+333,Nataka and Vykarana,"3C(02)SKT-",T,3,16,3,2014,4,10,40,UG
+334,Kavya and Vyakarana,"2C(01)SKT",T,3,16,2,2014,4,10,40,UG
+335,Management of Co-operatives,"4B09COM",L,1,14,4,2014,3,10,40,UG
+336,Co-operative Accounting and Legislations,"6B19COM",L,1,14,6,2014,3,10,40,UG
+337,Political Ideologies,"4C04POL",T,3,6,4,2014,4,10,40,UG
+338,Web Technology,"5D02CSC",T,2,9,5,2014,2,5,20,UG
+339,Vyavaharik Samskrita,"5D01SKT",T,2,16,5,2014,2,5,20,UG
+340,Foundations of Political Science,"3C03POL",T,3,6,3,2014,4,10,40,UG
+341,Dynamics of Indian Political System,"5D01POL",T,2,6,5,2014,2,5,20,UG
+342,Introduction to Computer and Programming,"1C01CSC",T,3,9,1,2019,2,8,32,UG
+343,"Lab-I (Programming in C, Web Programming and Python Programming)","4C05CSC",L,3,9,1,2019,0,0,0,UG
+344,"Set Theory, Differential Calculus and Numerical Methods","1B01MAT",T,1,10,1,2019,4,12,48,UG
+345,Mathematics for Physics I,"1C01MAT-PH",T,3,10,1,2019,3,10,40,UG
+346,Mathematics for Chemistry I,"1C01MAT-CH",T,3,10,1,2019,3,10,40,UG
+347,Mathematics for Statistics I,"1C01MAT-ST",T,3,10,1,2019,3,10,40,UG
+348,Introductory Statistics,"1B01STA",T,1,12,1,2019,3,12,48,UG
+349,Basics Statistics,"1C01STA",T,3,12,1,2019,3,10,40,UG
+350,Hindi Kavitha,"1A07HIN",T,4,3,1,2019,4,10,40,UG
+351,Kavitha Aur Kahani,"1A07-1HIN",T,4,3,1,2019,4,10,40,UG
+352,Naya Sahithya,"1A07-2HIN",T,4,3,1,2019,4,10,40,UG
+353,Cytology and Angiosperm Anatomy,"1B01PLS",T,1,7,1,2019,3,10,40,UG
+354,Core Practical I,"4B05PLS",L,1,7,1,2019,0,0,0,UG
+355,"Microbiology, Phycology, Mycology and Lichenology","1C01BOT",L,3,7,1,2019,2,10,40,UG
+356,CE Practical - Botany,"4C05PLS",L,3,7,1,2019,0,0,0,UG
+357,Protista and Non Chordata-I,"1B01ZLG",T,1,13,1,2019,3,10,40,UG
+358,Practical-I,"4B01ZLG-P",L,1,13,1,2019,0,0,0,UG
+359,Diversity of Life - I Protistans and Non Chordates,"1C01ZLG",T,3,13,1,2019,2,8,32,UG
+360,Practical,"4C05ZLG-P",L,3,13,1,2019,0,0,0,UG
+361,Malayala Kavitha - Adhunikam Adhunikaantharam,"1B01MAL",T,1,5,1,2019,4,10,40,UG
+362,Paristhithi Dalit Linga Padavi Padanangal,"1C01MAL",T,3,5,1,2019,4,10,40,UG
+363,Kadha Mathrukakal,"1A07MAL",T,4,5,1,2019,4,10,40,UG
+364,Sahithyaroopangal,"1A07-1MAL",T,4,5,1,2019,4,10,40,UG
+365,Sahitya Ganangal,"1A07-2MAL",T,4,5,1,2019,4,10,40,UG
+366,Micro Economic Analysis-I,"1B01ECO",T,1,1,1,2019,5,10,40,UG
+367,Introductory Economics-I,"1C05ECO",T,3,1,1,2019,4,10,40,UG
+368,Population and Development,"1C09ECO",T,3,1,1,2019,4,10,40,UG
+369,Communicative English,"1A01ENG",T,4,2,1,2019,4,10,40,UG
+370,Readings on Kerala,"1A02ENG",T,4,2,1,2019,3,10,40,UG
+371,History of India I: Pre-historic Times to c.200 CE ,"1B01HIS",T,1,4,1,2019,4,10,40,UG
+372,Management Concepts & Principles,"1B01COM",T,1,14,1,2019,4,10,40,UG
+373,"Business Statistics and Basic Numerical
+Skills","1A11COM",T,3,14,1,2019,4,10,40,UG
+374,Theoretical and Inorganic Chemistry,"1B01PCH",T,1,8,1,2019,3,10,40,UG
+375,Chemistry (For Physical & Biological Sciences),"1C01CHE",T,3,8,1,2019,2,8,32,UG
+376,Mechanics 1,"1B01PHY",T,1,11,1,2019,2,10,40,UG
+377,General Physics Practical I,"4B05PHY",L,1,11,1,2019,0,0,0,UG
+378,Mechanics,"1C01PHY",T,3,11,1,2019,2,8,32,UG
+379,Physics Practical,"4C05PHY",L,3,11,1,2019,0,0,0,UG
+380,Readings on Life and Nature,"2A03ENG",T,4,2,2,2019,4,10,40,UG
+381,Readings on Gender,"2A04ENG",T,4,2,2,2019,3,10,40,UG
+382,Programming in C,"2C02CSC",T,3,9,2,2019,2,8,32,UG
+383,"Lab-I (Programming in C, Web Programming and Python Programming)","4C05CSC",L,3,9,2,2019,0,0,0,UG
+384,Rachana Thatha Prayog,"2A08HIN",T,4,3,2,2019,,,,UG
+385,Vyavaharik HIndi,"2A08-1HIN",T,4,3,2,2019,,,,UG
+387,Kavitha Mathrukakal,"2A08MAL",T,4,5,2,2019,4,10,40,UG
+388,Gadyaroopangal,"2A08-1MAL",T,4,5,2,2019,4,10,40,UG
+389,Gadya Mathrukakal,"2A08-2MAL",T,4,5,2,2019,4,10,40,UG
+390,Integral Calculus and Logic,"2B02MAT",T,1,10,2,2019,4,12,48,UG
+391,Mathematics for Physics II,"2C02MAT-PH",T,3,10,2,2019,3,10,40,UG
+392,Mathematics for Chemistry II,"2C02MAT-CH",T,3,10,2,2019,3,10,40,UG
+393,Mathematics for Statistics II,"2C02MAT-ST",T,3,10,2,2019,3,10,40,UG
+394,Cherukatha Sahithyam,"2B02MAL",T,1,5,2,2019,4,10,40,UG
+395,Kavya and Vyakarana,"2C01SKT-ML",T,3,16,2,2019,4,10,40,UG
+396,Mathematical Physics and Error Analysis,"2B02PHY",T,1,11,2,2019,3,10,40,UG
+397,"Electricity, Magnetism and Thermodynamics","2C02PHY",T,3,11,2,2019,2,8,32,UG
+398,General Physics Practical I,"4B05PHY",L,1,11,2,2019,0,0,0,UG
+399,Physics Practical,"4C05PHY",L,3,11,2,2019,0,0,0,UG
+400,Non Chordata-II,"2B02ZLG",T,1,13,2,2019,3,10,40,UG
+401,Diversity of Life-II Chordata Form and Functions,"2C02ZLG",T,3,13,2,2019,2,8,32,UG
+402,Micro Economic Analysis-II,"2B02ECO",T,1,1,2,2019,4,10,40,UG
+403,Economic Geography,"2C10ECO",T,3,1,2,2019,4,10,40,UG
+404,Probability Theory and Mathematical Expectation,"2B02STA",T,1,12,2,2019,3,12,48,UG
+405,Probability Theory and Random Variables,"2C02STA",T,3,12,2,2019,3,10,40,UG
+406,Analytical and Inorganic Chemistry I,"2B02PCH",T,1,8,2,2019,3,10,40,UG
+407,Chemistry (For Physical & Biological Sciences),"2C02CHE",T,3,8,2,2019,2,8,32,UG
+408,Introductory Economics II,"2C06ECO",T,3,1,2,2019,4,10,40,UG
+409,Cultural Transformations in Europe,"2B02HIS",T,1,4,2,2019,4,10,40,UG
+410,Functional Applications of Management,"2B02COM",T,1,14,2,2019,4,10,40,UG
+411,Quantitative Techniques for Business Decision,"2C01COM",T,3,14,2,2019,4,10,40,UG
+412,Reproductive Botany,"2B02BOT/PL",T,1,7,2,2019,3,10,40,UG
+413,"Bryology, Pteridology, Gymnosperm Biology, Palaeobotany, Phytopathology and Angiosperm Embryology","2C02BOT",T,3,7,2,2019,2,10,40,UG
+414,Basic Tools for Economic Analysis I,"5B07ECO ",T,1,12,5,2019,4,12,48,UG
+415,Heterodox Economics,"5B08ECO ",T,1,1,5,2019,4,10,40,UG
+416,Macroeconomic Analysis I,"5B09ECO ",T,1,1,5,2019,4,10,40,UG
+417,Developemnt Economics,"5B10ECO ",T,1,1,5,2019,4,10,40,UG
+418,Economics of Banking and Finance,"5B11ECO ",T,1,1,5,2019,4,10,40,UG
+419,Analytical and Inorganic Chemistry - II,"5B07PCH",T,1,8,5,2019,4,10,40,UG
+420,Inorganic Chemistry,"5B08PCH",T,1,8,5,2019,4,10,40,UG
+421,Physical Chemistry - I,"5B09PCH",T,1,8,5,2019,4,10,40,UG
+422,Physical Chemistry - II,"5B10PCH",T,1,8,5,2019,4,10,40,UG
+423,Practicals 3: Gravimetric Analysis ,"5B11PCH",L,1,8,5,2019,0,0,0,UG
+424,Practicals 4: Organic Chemistry,"5B12PCH",L,1,8,5,2019,3,0,0,UG
+425,Project & Industrial Visit,"5B13PCH",L,1,8,5,2019,0,0,0,UG
+426,Core Course Practicals 5 Physical Chemistry,"6B18CHE",L,1,8,5,2019,0,0,0,UG
+427,"Evolution, Ethology and Research Methodology","5B05ZLG",T,1,13,5,2019,4,10,40,UG
+428,Animal Physiology,"5B06ZLG",T,1,13,5,2019,4,10,40,UG
+429,Biochemistry and Biophysics,"5B07ZLG",T,1,13,5,2019,4,10,40,UG
+430,Genetics,"5B08ZLG",T,1,13,5,2019,3,10,40,UG
+431,Practical II and Practical III,"6B02ZLG-P",L,1,13,5,2019,0,10,40,UG
+432,"Set Theory, Theory of Equations and Complex Numbers","5B05MAT",T,1,10,5,2019,4,10,40,UG
+433,Real Analysis I,"5B06MAT",T,1,10,5,2019,4,10,40,UG
+434,Abstract Algebra ,"5B07MAT",T,1,10,5,2019,4,10,40,UG
+435,Differential Equations and Laplace Transforms,"5B08MAT",T,1,10,5,2019,3,10,40,UG
+436,Vector Calculus,"5B09MAT",T,1,10,5,2019,4,10,40,UG
+437,Statistical Inference - II,"5B05STA",T,1,12,5,2019,4,12,48,UG
+438,Mathematical Methods for Statistics - I,"5B06STA",T,1,12,5,2019,4,12,48,UG
+439,Regression Techniques and Time Series,"5B07STA",T,1,12,5,2019,4,12,48,UG
+440,Statistical Quality Control and Operations Research,"5B08STA",T,1,12,5,2019,4,12,48,UG
+441,Practical Using R - I ,"5B09STA",T,1,12,5,2019,4,12,48,UG
+442,Quantum Mechanics,"5B06PHY",T,1,11,5,2019,4,10,40,UG
+443,Electrostatics and Magnetostatics,"5B07PHY",T,1,11,5,2019,4,10,40,UG
+444,Thermodynamics and Statistical Mechanics,"5B08PHY",T,1,11,5,2019,4,10,40,UG
+445,Electronics II,"5B09PHY",T,1,11,5,2019,3,10,40,UG
+446,General Physics Practical II,"6B15PHY",L,1,11,5,2019,0,0,0,UG
+447,Electronics Practical III,"6B16PHY",L,1,11,5,2019,0,0,0,UG
+448,History of India IV: Colonial Transformations (1757-1885),"5B07HIS ",T,1,4,5,2019,4,10,40,UG
+449,History of India V: Making of the Nation (1885 -1947),"5B08HIS ",T,1,4,5,2019,4,10,40,UG
+450,History of Kerala II: Making of Modern Kerala (1500-1970),"5B09HIS ",T,1,4,5,2019,4,10,40,UG
+451,Method and Writing of History,"5B10HIS ",T,1,4,5,2019,4,10,40,UG
+452,Historiography: Perspectives and Practices,"5B11HIS ",T,1,4,5,2019,4,10,40,UG
+453,Readings on Democracy and Secularism,"3A05ENG",T,4,2,3,2019,4,10,40,UG
+454,Gadya Sahithyam,"3A09MAL",T,4,5,3,2019,4,10,40,UG
+455,Katha Sahithya,"3A09HIN",T,4,3,3,2019,4,10,40,UG
+456,Python for Machine Learning,"3B04ICSC",T,1,9,3,2020,3,10,40,PG
+457,Operating System,"3B05ICSC",T,1,9,3,2020,3,10,40,PG
+458,Data Structures,"3B06ICSC",T,1,9,3,2020,3,10,40,PG
+459,Lab-2 : Python for Machine Learning,"3B07ICSC",L,1,9,3,2020,2,5,20,PG
+460,Lab-3 : Data Structures using C,"3B08ICSC",L,1,9,3,2020,2,5,20,PG
+461,Computer Organization,"4B09ICSC",T,1,9,4,2020,3,10,40,PG
+462,Database Management System,"4B10ICSC",T,1,9,4,2020,3,10,40,PG
+463,Object Oriented Programming using Java,"4B11ICSC",T,1,9,4,2020,3,10,40,PG
+464,Lab-4 : Object Oriented Programming using Java,"4B12ICSC",L,1,9,4,2020,3,5,20,PG
+465,Lab-5: Database Management System,"4B13ICSC",L,1,9,4,2020,3,5,20,PG
+466,Web Technology with Database Management System,"3C03CSC",T,3,9,3,2019,2,8,32,UG
+467,"Lab 1: Programming In C, Web Programming and Python Programming","4C05CSC",L,3,9,3,2019,0,0,0,UG
+468,Business Research Methodology,"5B07COM",T,1,14,5,2019,3,10,40,UG
+469,Income Tax Law and Practice,"5B08COM",T,1,14,5,2019,4,10,40,UG
+470,Cost Accounting,"5B09COM",T,1,14,5,2019,4,10,40,UG
+471,Banking Principles and Operations,"5B10COM",T,1,14,5,2019,4,10,40,UG
+472,Co-operative Laws,"5B11COM",T,1,14,5,2019,4,10,40,UG
+473,Angiosperm Systematics and Ethnobotany,"5B06PLS",T,1,7,5,2019,3,10,40,UG
+474,Plant Physiology and Metabolism,"5B07PLS",T,1,7,5,2019,4,10,40,UG
+475,"Microbiology, Mycology, Lichenology and Phytopathology","5B08PLS",T,1,7,5,2019,4,10,40,UG
+476,"Research Methodology, Instrumentation and Biostatistics","5B09PLS",T,1,7,5,2019,3,10,40,UG
+477,Core Practical II,"6B14PLS",L,1,7,5,2019,0,0,0,UG
+478,Core Practical III,"6B15PLS",L,1,7,5,2019,0,0,0,UG
+479,Mushroom Cultivation,"5D01BOT",T,2,7,5,2019,2,5,20,UG
+480,Plantation Science,"3A11PLS",T,1,7,3,2019,3,10,40,UG
+481,Horticulture,"3A12PLS",T,1,7,3,2019,3,10,40,UG
+482,Plant Diversity I – Algae and Bryophytes,"3B03PLS",T,1,7,3,2019,3,10,40,UG
+483,"Angiosperm Morphology, Anatomy and Systematics","3C03BOT",T,3,7,3,2019,2,10,40,UG
+484,Core Practical - I,"4B05PLS",L,1,7,3,2019,0,0,0,UG
+485,Vyakarana Padanangal,"5B07MAL",T,1,5,5,2019,4,10,40,UG
+486,Novel Sahithyam,"5B08MAL",T,1,5,5,2019,4,10,40,UG
+487,Samskara Padanavum Sahithyavum,"5B09MAL",T,1,5,5,2019,4,10,40,UG
+488,Kerala Samskaram,"5B10MAL",T,1,5,5,2019,4,10,40,UG
+489,Nadodi Vijnaaneeyam,"5B11MAL",T,1,5,5,2019,4,10,40,UG
+490,Vaikkom Muhammed Basheer - Paadavum Padanavum,"5D04MAL",T,2,5,5,2019,2,5,20,UG
+491,Malayalasahithya Vimarshanam,"3B03MAL",T,1,5,3,2019,5,10,40,UG
+492,Indian Kavyasidhaanthangal,"3B04MAL",T,1,5,3,2019,4,10,40,UG
+493,Nataka and Vyakarana,"3C02SKT-ML",T,3,16,3,2019,4,10,40,UG
+494,Organic Chemistry - I,"3B04PCH",T,1,8,3,2019,3,10,40,UG
+495,Polymer Chemistry I,"3A11PCH",T,1,8,3,2019,3,10,40,UG
+496,Polymer Chemistry II,"3A12PCH",T,1,8,3,2019,3,10,40,UG
+497,Core Course Practicals 1 - Volumetric Analysis,"3B03PCH",L,1,8,3,2019,0,0,0,UG
+498,Core Course Practicals 2 - Inorganic Qualitative Analysis,"3B05PCH",L,1,8,3,2019,0,0,0,UG
+499,Polymer Chemistry II (Practical),"3B05PCH",L,1,8,3,2014,0,0,0,UG
+500,Chemistry (For Biological Science),"3C03CHE-BS",T,3,8,3,2019,2,8,32,UG
+501,Chemistry (For Physical Science) ,"3C03CHE-PS",T,3,8,3,2019,2,8,32,UG
+503,"Lab 1: Programming In C, Web Programming and Python Programming","4C05CSC",L,3,9,4,2019,4,8,32,UG
+504,Analytic Geometry and Applications of Derivatives,"3B03MAT",T,1,10,3,2019,4,10,40,UG
+505,Mathematics for Chemistry III,"3C03MAT-CH",T,3,10,3,2019,4,10,40,UG
+506,Mathematics for Physics III,"3C03MAT-PH",T,3,10,3,2019,4,10,40,UG
+507,Mathematics for Statistics III,"3C03MAT-ST",T,3,10,3,2019,4,10,40,UG
+508,Foundation Mathematics for Machine Learning I,"3C03MAT-ICS",T,3,10,3,2020,4,10,40,UG
+509,Mechanics II,"3B03PHY",T,1,11,3,2019,3,10,40,UG
+510,General Physics Practical I,"4B05PHY",L,1,11,3,2019,0,0,0,UG
+511,Optics and Photonics,"3C03PHY",T,3,11,3,2019,2,8,32,UG
+512,Physics Practical,"4C05PHY",L,3,11,3,2019,0,0,0,UG
+513,Probability Distribution and Limit Theorems,"3B03STA",T,1,12,3,2019,3,12,48,UG
+514,Probability Distributions,"3C03STA",T,3,12,3,2019,3,10,40,UG
+515,Probability Distributions,"3C03STA-ICS",T,3,12,3,2020,3,10,40,UG
+516,Chordata - I,"3B03ZLG",T,1,13,3,2019,3,10,40,UG
+517,Animal Physiology,"3C03ZLG",T,3,13,3,2019,2,8,32,UG
+518,Advanced Accounting,"3B03COM",T,1,14,3,2019,4,10,40,UG
+519,Co-operative Principles,"3B04COM",T,1,14,3,2019,4,10,40,UG
+520,Entrepreneurship Development,"3A12COM",T,1,14,3,2019,4,10,40,UG
+521,Business Regulatory Framework,"3C02COM",T,1,14,3,2019,4,10,40,UG
+522,Business Economics,"3C03COM",T,1,14,3,2019,4,10,40,UG
+523,"History of India II: Polity, Society and Culture (c.200 to 1206)","3B03HIS",T,1,4,3,2019,4,10,40,UG
+524,History of Kerala I: Earliest Times to c.1500 CE,"3B04HIS",T,1,4,3,2019,4,10,40,UG
+525,Foundations of Political Science,"3C03POL",T,3,6,3,2019,4,10,40,UG
+526,Central Themes in Indian Economy,"3B03ECO",T,1,1,3,2019,5,10,40,UG
+527,International Economics,"3B04ECO",T,1,1,3,2019,4,10,40,UG
+528,Practical,"4C05ZLG-P",L,3,13,3,2019,0,0,0,UG
+529,Practical-I,"4B01ZLG-P",L,1,13,3,2019,0,0,0,UG
+530,Complementary Elective Course Practical ,"4C05CHE",L,3,8,3,2019,0,0,0,UG
+531,Twentieth Century British Literature,ENG3C08,T,1,2,3,2016,5,20,80,PG
+532,Linguistics,ENG3C09,T,1,2,3,2016,5,20,80,PG
+533,Indian Writing in English,ENG3C10,T,1,2,3,2016,5,20,80,PG
+534,American Literature,ENG3C11,T,1,2,3,2016,5,20,80,PG
+535,European Fiction,ENG3E08,T,1,2,3,2016,5,20,80,PG
+536,Foundation Mathematics for Machine Learning II,"4C04MAT-ICS",T,3,10,4,2020,4,10,40,UG
+537,Statistical Inference,"4C04STA-ICS",T,3,12,4,2020,3,10,40,UG
+538,Economic Historyof Modern India 1793 - 1947,"3C07HIS",T,3,4,3,2019,4,10,40,UG
+539,Plant Propagation,"5D03BOT",T,2,7,5,2019,2,5,20,UG
+540,Basic Accounting,"5D01COM",T,2,14,5,2019,2,5,20,UG
+541,Principles of Management,"5D03COM",T,2,14,5,2019,2,5,20,UG
+542,Environmental Studies,"5D03CHE",T,2,8,5,2019,2,5,20,UG
+543,Web Technology,"5D02CSC",T,2,9,5,2019,2,5,20,UG
+544,Python Programming,"5D05CSC",T,2,9,5,2019,2,5,20,UG
+545,Basics of Economics,"5D01ECO",T,2,1,5,2019,2,5,20,UG
+546,Social Reform Movements in Kerala,"5D01HIS",T,2,4,5,2019,2,5,20,UG
+547,India's Struggle for Freedom,"5D02HIS",T,2,4,5,2019,2,5,20,UG
+548,Cultural Heritage of North Malabar,"5D03HIS",T,2,4,5,2019,2,5,20,UG
+549,Quantitative Arithmetic and Reasoning,"5D02MAT",T,2,10,5,2019,2,5,20,UG
+550,Graph Theory,"5D04MAT",T,2,10,5,2019,2,5,20,UG
+551,Biophysics,"5D03PHY",T,2,11,5,2019,2,5,20,UG
+552,Electricity in Daily Life,"5D05PHY",T,2,11,5,2019,2,5,20,UG
+553,Human Rights in India,"5D01POL",T,2,6,5,2019,2,5,20,UG
+554,Herbal Literacy and Ethnobotanical Awareness,"5D02SKT",T,2,16,5,2019,2,5,20,UG
+555,Literary Wolrd of Kalidasa,"5D052SKT",T,2,16,5,2019,2,5,20,UG
+556,Sampling Techniques,"5D02STA",T,2,12,5,2019,2,5,20,UG
+557,Index Numbers and Time Series,"5D04STA",T,2,12,5,2019,2,5,20,UG
+558,Apiculture,"5D02ZLG",T,2,13,5,2019,2,5,20,UG
+559,Sericulture,"5D03ZLG",T,2,13,5,2019,2,5,20,UG
+560,Exercise is Medicine,"5D05PED",T,2,15,5,2019,2,5,20,UG
+564,Sahithya Aur Prayog,"2A08-2HIN",T,4,3,1,2019,4,10,40,UG
+568,Natak Aur Ekangi,"4A10HIN",T,4,3,4,2019,4,10,40,UG
+569,Readings on Philosophy of Knowledge,"4A06ENG",T,4,2,4,2019,4,10,40,UG
+574,Drishya Kala Sahithyam,"4A10MAL",T,4,5,4,2019,4,10,40,UG
+575,Introduction to C Programming,"1B01ICSC",T,1,9,1,2020,2,10,40,UG
+576,Lab 1 - C Programming,"2B03ICSC",L,1,9,1,2020,0,0,0,UG
+577,Differential Calculus and Linear Algebra I,"1C01MAT-ICS",T,3,10,1,2020,3,10,40,UG
+578,Basic Statistics,"1C01STA-ICS",T,3,12,1,2020,3,10,40,UG
+579,Macro Economics Analysis II,"6B13ECO",T,1,1,6,2019,4,10,40,UG
+580,Puublic Economics,"6B14ECO",T,1,1,6,2019,4,10,40,UG
+581,Basic Econometric Analysis,"6B15ECO",T,1,1,6,2019,4,10,40,UG
+582,Basic Tools for Economic Analysis II,"6B12ECO",T,1,12,6,2019,4,12,48,UG
+583,Real Analysis II,"6B10MAT",T,1,10,6,2019,4,10,40,UG
+584,Complex Analysis,"6B11MAT",T,1,10,6,2019,4,10,40,UG
+585,"Numerical Methods, Fourier Series and Partial Differential Equations","6B12MAT",T,1,10,6,2019,4,10,40,UG
+586,Linear Algebra,"6B13MAT",T,1,10,6,2019,4,10,40,UG
+587,Operations Research,"6B14MAT",T,1,10,6,2019,3,10,40,UG
+588,Number Theory and Applications of Integrals,"4B04MAT",T,1,10,4,2019,3,10,40,UG
+589,Mathematics for Chemistry IV,"4C04MAT-CH",T,3,10,4,2019,3,10,40,UG
+590,Mathematics for Physics IV,"4C04MAT-PH",T,3,10,4,2019,3,10,40,UG
+591,Mathematics for Statistics IV,"4C04MAT-ST",T,3,10,4,2019,3,10,40,UG
+592,Research Methods and Techniques for Economic Analysis,"4B05ECO",T,1,1,4,2019,4,10,40,UG
+593,Environmental Economics,"4B06ECO",T,1,1,4,2019,4,10,40,UG
+594,Project,"6B16ECO",P,1,1,6,2019,2,25,25,UG
+595,lndian National Movement,"4C08HIS",T,3,4,4,2019,4,10,40,UG
+596,History of India VI: Developments since Independence (1947 - 2000),"6B12HIS ",T,1,4,6,2019,5,10,40,UG
+597,History of the Contemporary World (1945-2000),"6B13HIS ",T,1,4,6,2019,4,10,40,UG
+598,Indian Historiography,"6B14HIS ",T,1,4,6,2019,4,10,40,UG
+599,Project,"6B15HIS ",T,1,4,6,2019,3,10,40,UG
+600,Bhasha Shasthram,"6B12MAL",T,1,5,6,2019,4,10,40,UG
+601,Maadhyama Padanam,"6B13MAL",T,1,5,6,2019,4,10,40,UG
+602,Vivara Sankethika Vidyayum Malayalavum,"6B14MAL",T,1,5,6,2019,4,10,40,UG
+603,Vivarthana Sahithyam,"6B15MAL",T,1,5,6,2019,4,10,40,UG
+604,Project,"6B16MAL",P,1,5,6,2019,2,10,40,UG
+605,Dynamics of Indian Political System,"4C04POL",T,3,6,4,2019,4,10,40,UG
+606,Core Practical I,"4B05PLS",L,1,7,2,2019,0,0,0,UG
+607,Core Practical I,"4B05PLS",L,1,7,4,2019,4,20,80,UG
+608,CE Practical - Botany,"4C05PLS",L,3,7,2,2019,0,0,0,UG
+609,CE Practical - Botany,"4C05PLS",L,3,7,3,2019,0,0,0,UG
+610,CE Practical - Botany,"4C05PLS",L,3,7,4,2019,4,20,80,UG
+611,Plant Diversity II – Pteridophytes and Gymnosperms,"4B04PLS",T,1,7,4,2019,3,10,40,UG
+612,Plantation Management,"4A13PLS",T,1,7,4,2019,3,10,40,UG
+613,Herbal Science,"4A14PLS",T,1,7,4,2019,3,10,40,UG
+614,General Practical,"4A15PLS",L,1,7,4,2019,4,20,80,UG
+615,Environmental Science and Phytogeography,"6B10PLS",T,1,7,6,2019,4,10,40,UG
+616,"Genetics, Molecular Biology and Plant Breeding","6B11PLS",T,1,7,6,2019,4,10,40,UG
+617,Biotechnology and Bioinformatics ,"6B12PLS",T,1,7,6,2019,4,10,40,UG
+618,Evolution and Palaeobotany,"6B13PLS",T,1,7,6,2019,3,10,40,UG
+619,Core Practical II,"6B14PLS",L,1,7,6,2019,4,20,80,UG
+620,Core Practical III,"6B15PLS",L,1,7,6,2019,4,20,80,UG
+621,Polymer Chemistry III,"4A13PCH",T,1,8,4,2019,3,10,40,UG
+622,Polymer Chemistry III (Practical),"4A13(A)PCH",L,1,8,4,2019,2,10,40,UG
+623,Polymer Chemistry IV,"4A14PCH",T,1,8,4,2019,3,10,40,UG
+624,Organic Chemistry-II,"4B06PCH",T,1,8,4,2019,3,10,40,UG
+625,Core Course Practicals 2 - Inorganic Qualitative Analysis,"4B05PCH",L,1,8,4,2019,0,0,0,UG
+626,Core Course Practicals 1 - Volumetric Analysis,"4B03PCH",L,1,8,4,2019,0,0,0,UG
+627,Computation Using Python,"4C04CSC",T,3,9,4,2019,2,8,32,UG
+628,Introduction to Artificial Intelligence,"5B14ICSC",T,1,9,5,2020,3,10,40,PG
+629,Software Engineering,"5B15ICSC",T,1,9,5,2020,3,10,40,PG
+630,UNIX Shell Programming,"5B16ICSC",T,1,9,5,2020,3,10,40,PG
+631, Introduction to Machine Learning,"5B17ICSC",T,1,9,5,2020,4,10,40,PG
+632,Lab-6 : UNIX Shell Programming,"5B18ICSC",L,1,9,5,2020,2,5,20,PG
+633,Lab-7: Machine Learning,"5B19ICSC",L,1,9,5,2020,3,5,20,PG
+634,General Physics Practical I,"4B05PHY",L,1,11,4,2019,4,10,40,UG
+635,Physics Practical,"4C05PHY",L,3,11,4,2019,4,10,40,UG
+636,Electronics I,"4B04PHY",T,1,11,4,2019,3,10,40,UG
+637,Electronics and Modern Physics,"4C04PHY",T,3,11,4,2019,2,8,32,UG
+638,Solid State Physics and Spectroscopy,"6B10PHY",T,1,11,6,2019,4,10,40,UG
+639,Optics and Photonics,"6B11PHY",T,1,11,6,2019,4,10,40,UG
+640,"Nuclear, Particle and Astrophysics","6B12PHY",T,1,11,6,2019,4,10,40,UG
+641,Electrodynamics and Circuit Theory,"6B13PHY",T,1,11,6,2019,3,10,40,UG
+642,Material Science,"6B14PHY(1)",T,1,11,6,2019,2,10,40,UG
+643,General Physics Practical II,"6B15PHY",L,1,11,6,2019,4,10,40,UG
+644,Electronics Practical III,"6B16PHY",L,1,11,6,2019,4,10,40,UG
+645,Project,"6B17PHY",P,1,11,6,2019,2,5,20,UG
+646,Differential Calculus and Linear Algebra II,"2C02MAT-ICS",T,3,10,2,2020,4,10,40,UG
+647,Probability Theory and Random Variables,"2C02STA-ICS",T,3,12,2,2020,3,10,40,UG
+648,Statistical Inference – I,"4B04STA",T,1,12,4,2019,3,12,48,UG
+649,Statistical Inference,"4C04STA",T,3,12,4,2019,3,10,40,UG
+650,Mathematical Methods for Statistics – II ,"6B10STA",T,1,12,6,2019,4,12,48,UG
+651,Mathematical Methods for Statistics – III,"6B11STA",T,1,12,6,2019,4,12,48,UG
+652,Sampling Techniques and Design of Experiments,"6B12STA",T,1,12,6,2019,4,12,48,UG
+653,Applied Statistics,"6B13ASTA",T,1,12,6,2019,4,12,48,UG
+654,Practical Using R – II,"6B14STA",L,1,12,6,2019,4,12,48,UG
+655,Project,"6B15STA",P,1,12,6,2019,4,7,28,UG
+656,Practical-I,"4B01ZLG-P",L,1,13,2,2019,0,0,0,UG
+657,Practical-I,"4B01ZLG-P",L,1,13,4,2019,4,10,40,UG
+658,Practical,"4C05ZLG-P",L,3,13,2,2019,0,0,0,UG
+659,Practical,"4C05ZLG-P",L,3,13,4,2019,4,8,32,UG
+660,Chordata-II and Comparative Anatomy,"4B04ZLG",T,1,13,4,2019,3,10,40,UG
+661,Medical Zoology,"4C04ZLG",T,3,13,4,2019,2,8,32,UG
+662,"Cell Biology, Immunology and Microbiology","6B09ZLG",T,1,13,6,2019,4,10,40,UG
+663,Molecular Biology and Bioinformatics,"6B10ZLG",T,1,13,6,2019,4,10,40,UG
+664,Environmental Science,"6B11ZLG",T,1,13,6,2019,4,10,40,UG
+665,Developmental Biology,"6B12ZLG",T,1,13,6,2019,3,10,40,UG
+666,Core Practical II,"6B02ZLG-P",L,1,13,6,2019,4,15,60,UG
+667,Core Practical III,"6B03ZLG-P",L,1,13,6,2019,4,15,60,UG
+668,Project,"6B13ZLG",P,1,13,6,2019,2,7,28,UG
+669,Corporate Accounting,"4B05COM",T,1,14,4,2019,4,10,40,UG
+670,Management of Cooperatives,"4B06COM",T,1,14,4,2019,4,10,40,UG
+671,General Informatics Skills,"4A13COM",T,1,14,4,2019,4,10,40,UG
+672,Environmental Studies and Disaster Management,"4A14COM",T,1,14,4,2019,4,10,40,UG
+673,Corporate Law and Business Regulations,"4C04COM",T,1,14,4,2019,4,10,40,UG
+674,Financial Markets and Services,"6B12COM",T,1,14,6,2019,3,10,40,UG
+675,Management Accounting,"6B13COM",T,1,14,6,2019,4,10,40,UG
+676,Auditing and Corporate Governance,"6B14COM",T,1,14,6,2019,4,10,40,UG
+677,Income Tax and GST,"6B15COM",T,1,14,6,2019,4,10,40,UG
+678,Co-operative Accounting and Legislations,"6B16COM",T,1,14,6,2019,4,10,40,UG
+679,Project,"6B17COM",T,1,14,6,2019,2,10,40,UG
+680,Environmental History of India,"6B16HIS-B",T,1,4,6,2019,4,10,40,UG
+681,History of India III: Sultanate to British Conquest (1206 -1757),"4B05HIS",T,1,4,4,2019,4,10,40,UG
+682,Ideologies and Revolutions in the Modern World ,"4B06HIS",T,1,4,4,2019,4,10,40,UG
+683,Paaschaathya Saahithya Sidhaanthangal,"4B05MAL",T,1,5,4,2019,5,10,40,UG
+684,Praacheena Madhyakaala Saahithyam,"4B06MAL",T,1,5,4,2019,4,10,40,UG
+685,Malabar Padanangal,"4C04MAL",T,1,5,4,2019,4,10,40,UG
+686,Complementary Elective Course Practical ,"4C05CHE",L,3,8,1,2019,0,0,0,UG
+687,Complementary Elective Course Practical ,"4C05CHE",L,3,8,2,2019,0,0,0,UG
+688,Polymer Chemistry II (Practical),"3A12(A)PCH",L,1,8,3,2019,0,0,0,UG
+689,Complementary Elective Course Practical ,"4C05CHE",L,3,8,4,2019,4,8,32,UG
+690,Chemistry (For Biological Science),"4C04CHE-BS",T,3,8,4,2019,2,8,32,UG
+691,Chemistry (For Physical Science) ,"4C04CHE-PS",T,3,8,4,2019,2,8,32,UG
+692,Organic Chemistry III,"6B14PCH",T,1,8,6,2019,4,10,40,UG
+693,Physical Chemistry III,"6B15PCH",T,1,8,6,2019,3,10,40,UG
+694,Physical Methods in Chemistry,"6B16PCH",T,1,8,6,2019,3,10,40,UG
+695,Environmental Chemistry,"6B17PCH",T,1,8,6,2019,3,10,40,UG
+696,Core Course Practicals 5 Physical Chemistry,"6B18CHE",L,1,8,6,2019,3,10,40,UG
+697,Practicals 3: Gravimetric Analysis ,"6B11PCH",L,1,8,6,2019,3,10,40,UG
+698,Practicals 4: Organic Chemistry,"6B12PCH",L,1,8,6,2019,3,10,40,UG
+699,Project & Industrial Visit,"6B13PCH",L,1,8,6,2019,2,10,40,UG
+700,"Plant Physiology, Ecology and Applied Botany","4C04BOT",T,3,7,4,2019,2,10,40,UG
+701,Sahithya Aur Prayog,"2A08-2HIN",T,4,3,2,2019,,,,UG
+702,Lab 1 - C Programming,"2B03ICSC",L,1,9,2,2020,2,5,20,UG
+703,Advanced C Programming,"2B02ICSC",T,1,9,2,2020,2,10,40,UG
+704,Web Technology,"6B20ICSC",T,1,9,6,2020,3,10,40,PG
+705,Introduction to Deep Learning,"6B21ICSC",T,1,9,6,2020,3,10,40,PG
+706,Computer Networks,"6B22ICSC",T,1,9,6,2020,3,10,40,PG
+707,Design and Analysis of Algorithms,"6B23ICSC",T,1,9,6,2020,3,10,40,PG
+708,Lab-8: Web Technology,"6B24ICSC",L,1,9,6,2020,3,5,20,PG
+709,Project,"6B25ICSC",L,1,9,6,2020,7,20,80,PG
+710,Novel Vaayana,"5D03MAL",T,2,5,5,2019,2,5,20,UG
+711,Mathematical Models of Machine Learning - 1,"7B26ICSC",T,1,9,7,2020,3,20,80,PG
+712,Theory of Computation,"7B27ICSC",T,1,9,7,2020,3,20,80,PG
+713,Soft Computing Techniques,"7B28ICSC",T,1,9,7,2020,3,20,80,PG
+714,Digital Image Processing,"7B29ICSC",T,1,9,7,2020,3,20,80,PG
+715,Lab-9: Digital Image Processing,"7B31ICSC",L,1,9,7,2020,4,20,80,PG
+716,Lab-10 : Soft Computing Techniques,"7B32ICSC",L,1,9,7,2020,4,20,80,PG
+717,Mathematical Models of Machine Learning - II,"8B33ICSC",T,1,9,8,2020,3,20,80,PG
+718,Advanced Artificial Inteligence,"8B34ICSC",T,1,9,8,2020,3,20,80,PG
+719,Advanced Machine Learning Techniques,"8B35ICSC",T,1,9,8,2020,3,20,80,PG
+720,Data Mining,"8B36ICSC",T,1,9,8,2020,3,20,80,PG
+721,Research Methodology,"8B37ICSC",T,1,9,8,2020,1,50,0,PG
+722,Lab-11 Case Study (Data Mining),"8B38ICSC",L,1,9,8,2020,4,20,80,PG
+723,Lab-12 Advanced Machine Learning,"8B39ICSC",L,1,9,8,2020,4,20,80,PG
+724,Optimization Techniques,"9B40ICSC",T,1,9,9,2020,3,20,80,PG
+725,Deep Learning ,"9B41ICSC",T,1,9,9,2020,4,20,80,PG
+726,Information Security and Blockchain Technology,"9B42ICSC",T,1,9,9,2020,3,20,80,PG
+727,Natural Language Processing,"9B43ICSC",T,1,9,9,2020,3,20,80,PG
+728,Lab-13 Natural Language Processing ,"9B44ICSC",L,1,9,9,2020,4,20,80,PG
+729,Lab-14 Mini Project ,"9B45ICSC",L,1,9,9,2020,4,20,80,PG
+730,Human Computer Interaction,"10B46ICSCE01",T,1,9,10,2020,3,50,0,PG
+731,Computer Vision,"10B47ICSCE01",T,1,9,10,2020,3,50,0,PG
+732,Project,"10B48ICSC",P,1,9,10,2020,8,20,80,PG
+734,Cosmology,"6B14PHY(4)",T,1,11,6,2019,2,10,40,UG
