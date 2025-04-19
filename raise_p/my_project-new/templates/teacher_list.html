@@ -41,14 +41,35 @@
                 <td>{{ teacher.role }}</td>
                 <td>{{ teacher.phone_num }}</td>
                 <td>{{ teacher.gender }}</td>
-                <td>
+                 <td>
                     <div class="d-flex flex-wrap justify-content-center gap-2">
-                        <a href="{% url 'edit_teacher' teacher.pk %}" class="btn btn-sm btn-outline-warning">Edit</a>
-                        <a href="{% url 'delete_teacher' teacher.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
+                        <a href="{% url 'edit_teacher' teacher.pk %}" title="Edit" style="color: #ffc107; font-size: 1.2rem;">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                        <a href="{% url 'delete_teacher' teacher.pk %}" title="Delete" style="color: #dc3545; font-size: 1.2rem;">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
                         <a href="{% url 'change_teacher_password' teacher.user.id %}" class="btn btn-sm btn-outline-primary">Change Password</a>
                         <a href="{% url 'reset_teacher_password' teacher.user.id %}" class="btn btn-sm btn-outline-secondary">Reset Password</a>
                     </div>
                 </td>
+                {% comment %} <td class="text-center">
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="{% url 'edit_teacher' teacher.pk %}" title="Edit" style="color: #ffc107; font-size: 1.2rem;">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                        <a href="{% url 'delete_teacher' teacher.pk %}" title="Delete" style="color: #dc3545; font-size: 1.2rem;">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                        <a href="{% url 'change_teacher_password' teacher.user.id %}" class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-key me-1"></i> Change Password
+                        </a>
+                        <a href="{% url 'reset_teacher_password' teacher.user.id %}" class="btn btn-sm btn-outline-secondary">
+                            <i class="fa-solid fa-rotate-left me-1"></i> Reset Password
+                        </a>
+                    </div>
+                </td>
+                 {% endcomment %}
             </tr>
             {% endfor %}
         </tbody>

@@ -32,12 +32,17 @@
             <td style="text-align:center;">{{ exam.level }}</td>
             <td style="text-align:center;">{{ exam.active }}</td>
             <td style="text-align:center;">{{ exam.month }}</td>
-            <td class="text-center" >
-                <div class="d-flex justify-content center gap-2">
-                    <a href="{% url 'edit_exam' exam.pk %}" class="btn btn-sm btn-outline-warning me-1" style="width: 60px; height: 35px;">Edit</a>
-                    <a href="{% url 'delete_exam' exam.pk %}" class="btn btn-sm btn-outline-danger" style="width: 60px; height: 35px;">Delete</a>
+            <td class="text-center">
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="{% url  'edit_exam' exam.pk  %}" title="Edit" style="color: #ffc107; font-size: 1.2rem;">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
+                    <a href="{% url 'delete_exam' exam.pk %}" title="Delete" style="color: #dc3545; font-size: 1.2rem;">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
                 </div>
             </td>
+            
         </tr>
         {% endfor %}
     </tbody>

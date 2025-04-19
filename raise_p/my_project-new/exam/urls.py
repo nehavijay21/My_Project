@@ -64,5 +64,11 @@ urlpatterns = [
     path('duty-history/', views.duty_history, name='duty_history'),
     path('exam-attendance/', views.upload_nominal_roll, name='setup_nominal_roll'),
     path('exam-attendance/delete/', views.delete_nominal_roll, name='delete_nominal_roll'),
-    path('exam-attendance/<str:date>/', views.mark_attendance, name='mark_attendance'),
+    path('exam-attendance/<str:date>/<str:course_code>/', views.mark_attendance, name='mark_attendance'),
+
+    path('generate-excel/', views.generate_excel, name='generate_excel'),
+    path('get-exam-dates/', views.get_exam_dates, name='get_exam_dates'),
+
+     path('chief-duties/', views.chief_duty_history, name='chief_duty_history'),
+
 ]

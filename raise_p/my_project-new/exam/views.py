@@ -5,12 +5,20 @@ from django.utils.timezone import now
 from .models import Programme, Room, Course, Exam, Timetable, Teacher, DutyAllotment, DutyPreference
 from .forms import ProgramForm, RoomForm, CourseForm, ExamForm, TimetableForm, TeacherForm, DutyAllotmentForm, DutyPreferenceForm
 from datetime import datetime
-from django.utils.dateparse import parse_date  # Import parse_date
+from django.utils.dateparse import parse_date 
 from django.urls import reverse
 import pandas as pd
 from django.shortcuts import render, redirect
 from .models import ExamAttendance, Student, StudentExam
 from django.contrib import messages
+from datetime import datetime
+import os
+from django.conf import settings
+from django.http import HttpResponse
+
+import openpyxl
+from openpyxl.styles import Alignment, Border, Font, Side
+from openpyxl.utils import get_column_letter, range_boundaries
 
 
 
@@ -45,7 +53,7 @@ def manage_teacher(request):
 
 @login_required()
 def manage_duty(request):
-    duties = DutyAllotment.objects.all()  # Fetch duty allotments from database
+    duties = DutyAllotment.objects.all() 
     return render(request, 'duty_allotment.html', {'duties': duties})
 
 @login_required()
@@ -63,15 +71,11 @@ def dashboard_view(request):
     user = request.user
     is_teacher = user.groups.filter(name='teacher').exists()
     is_chief = user.groups.filter(name='chief').exists()
-
-    # Fetch ongoing exams based on Timetable dates
     ongoing_exams = Exam.objects.filter(timetable__date__gte=now().date()).distinct()
-
-    # Fetch duty allotments and preferences for teachers
     if is_teacher:
         duty_allotments = DutyAllotment.objects.filter(teacher=user.teacher)
         duty_preferences = DutyPreference.objects.filter(teacher=user.teacher)
-    else:  # Chief sees everything
+    else: 
         duty_allotments = DutyAllotment.objects.all()
         duty_preferences = DutyPreference.objects.all()
 
@@ -172,21 +176,18 @@ from django.db.models import IntegerField
 from django.db.models.functions import Cast
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required, user_passes_test
-from .models import Course  # Ensure correct import
+from .models import Course  
 
 @login_required()
 @user_passes_test(chief_group_required)
 def course_list(request):
-    order = request.GET.get('order', 'asc')  # Default to ascending
+    order = request.GET.get('order', 'asc')  
 
-    # Extract numbers from course_code safely
     def extract_number(course):
-        match = re.search(r'\d+', course.course_code)  # Extract first number
-        return int(match.group()) if match else float('inf')  # Use high value if no number
+        match = re.search(r'\d+', course.course_code)  
+        return int(match.group()) if match else float('inf')  
 
-    courses = list(Course.objects.all())  # Convert queryset to list for sorting
-
-    # Sort using extracted numbers
+    courses = list(Course.objects.all())  
     courses.sort(key=lambda c: extract_number(c), reverse=(order == 'desc'))
 
     return render(request, 'course_list.html', {'courses': courses, 'order': order})
@@ -282,7 +283,7 @@ def timetable_list(request):
 @login_required()
 @user_passes_test(chief_group_required)
 def add_timetable(request):
-    ongoing_exams = Exam.objects.filter(active=True)  # Only active exams
+    ongoing_exams = Exam.objects.filter(active=True)  
 
     if request.method == 'POST':
         form = TimetableForm(request.POST)
@@ -292,7 +293,6 @@ def add_timetable(request):
     else:
         form = TimetableForm()
 
-    # Apply filtered exams to the form's exam field
     form.fields['exam'].queryset = ongoing_exams
 
     return render(request, 'add_timetable.html', {'form': form})
@@ -349,7 +349,7 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.models import User
 from .models import Teacher
-from .forms import TeacherForm, TeacherEditForm  # Add TeacherEditForm separately (without password)
+from .forms import TeacherForm, TeacherEditForm  
 
 @login_required()
 @user_passes_test(chief_group_required)
@@ -383,7 +383,7 @@ def edit_teacher(request, pk):
     user = teacher.user
 
     if request.method == "POST":
-        form = TeacherEditForm(request.POST, instance=teacher)  # Only TeacherEditForm (no password)
+        form = TeacherEditForm(request.POST, instance=teacher)  
         if form.is_valid():
             form.save()
             messages.success(request, "Teacher updated successfully!")
@@ -443,10 +443,8 @@ def reset_teacher_password(request, user_id):
 @login_required()
 @user_passes_test(chief_group_required)
 def duty_allotment(request):
-    # Fetch all examination dates from the Timetable model
     exam_dates = Timetable.objects.all().order_by('date')
 
-    # Count the number of duties assigned for each exam date
     duty_counts = {date.date: DutyAllotment.objects.filter(date=date.date).count() for date in exam_dates}
 
     return render(request, 'duty_allotment.html', {'exam_dates': exam_dates, 'duty_counts': duty_counts})
@@ -454,11 +452,11 @@ def duty_allotment(request):
 @login_required()
 @user_passes_test(chief_group_required)
 def manage_duty_allotments(request):
-    selected_date = request.GET.get('date')  # Get date from the URL parameter
+    selected_date = request.GET.get('date')  
     if selected_date:
-        duties = DutyAllotment.objects.filter(date=selected_date)  # Filter duties by selected date
+        duties = DutyAllotment.objects.filter(date=selected_date)  
     else:
-        duties = DutyAllotment.objects.all()  # Show all duties if no date is selected
+        duties = DutyAllotment.objects.all()  
 
     return render(request, 'manage_duty_allotments.html', {'duties': duties, 'selected_date': selected_date})
 
@@ -466,19 +464,16 @@ def manage_duty_allotments(request):
 @login_required()
 @user_passes_test(chief_group_required)
 def duty_list(request):
-    date_str = request.GET.get('date')  # Get the date from URL parameters
-    formatted_date = None  # Initialize formatted_date
+    date_str = request.GET.get('date')  
+    formatted_date = None  
 
     if date_str:
-        # Try parsing the date in both possible formats
-        formatted_date = parse_date(date_str)  # Handles 'YYYY-MM-DD' format
+        formatted_date = parse_date(date_str)  
         if not formatted_date:
             try:
                 formatted_date = datetime.strptime(date_str, "%b. %d, %Y").date()  # Handles 'Feb. 19, 2025' format
             except ValueError:
-                formatted_date = None  # If conversion fails, return None
-
-    # Query duties for the selected date, only show duties where a teacher is assigned
+                formatted_date = None 
     duties = DutyAllotment.objects.filter(date=formatted_date, teacher__isnull=False) if formatted_date else []
 
     return render(request, 'duty_list.html', {'duties': duties, 'selected_date': formatted_date})
@@ -497,27 +492,20 @@ from .forms import DutyAllotmentForm
 def add_duty(request):
     selected_date = request.GET.get('date', None)
     
-    # Debugging: Print selected_date to check if it's coming in correct format
     print("Received date from URL:", selected_date)
 
     if not selected_date:
         messages.error(request, "No date provided. Please select a valid date.")
         return redirect('duty_allotment')
-
-    # Try parsing YYYY-MM-DD format
     formatted_date = parse_date(selected_date)
 
     if not formatted_date:
         messages.error(request, f"Invalid date format received: {selected_date}")
         return redirect('duty_allotment')
 
-    # Debugging: Print formatted date
     print("Parsed date:", formatted_date)
-
-    # Fetch teachers who prefer this date
     preferred_teachers = Teacher.objects.filter(duty_preferences__pref_date=formatted_date).distinct()
 
-    # Add duty count for each teacher
     for teacher in preferred_teachers:
         teacher.duty_counts = DutyAllotment.objects.filter(teacher=teacher, date=formatted_date).count()
 
@@ -525,14 +513,13 @@ def add_duty(request):
         form = DutyAllotmentForm(request.POST)
         if form.is_valid():
             duty = form.save(commit=False)
-            duty.date = formatted_date  # Ensure correct date is saved
+            duty.date = formatted_date 
             duty.save()
             messages.success(request, "Duty allotted successfully!")
             return redirect(reverse('duty_list') + f"?date={selected_date}")
         else:
             messages.error(request, "Form is invalid. Please check the entered data.")
     else:
-        # Initialize form with correct date
         form = DutyAllotmentForm(initial={'date': formatted_date})
 
     return render(request, 'add_duty.html', {
@@ -559,14 +546,12 @@ def edit_duty(request, pk):
 @login_required()
 @user_passes_test(chief_group_required)
 def delete_duty(request, pk):
-    duty = get_object_or_404(DutyAllotment, pk=pk)  # Get the duty object or return 404
-    selected_date = duty.date.strftime("%Y-%m-%d")  # Convert date to 'YYYY-MM-DD' format
+    duty = get_object_or_404(DutyAllotment, pk=pk)
+    selected_date = duty.date.strftime("%Y-%m-%d") 
 
     if request.method == 'POST':
         duty.delete()
         messages.success(request, "Duty deleted successfully!")
-
-        # Redirect back to duty list with the selected date
         return redirect(f"{reverse('duty_list')}?date={selected_date}")
 
     return render(request, 'delete_duty.html', {'duty': duty})
@@ -621,8 +606,6 @@ def delete_preference(request, pk):
 @user_passes_test(teacher_group_required)
 def duty_history(request):
     user = request.user
-
-    # Ensure the user has a linked teacher profile
     if hasattr(user, 'teacher'):
         teacher = user.teacher
         duty_records = DutyAllotment.objects.filter(teacher=teacher)
@@ -631,78 +614,109 @@ def duty_history(request):
 
     return render(request, 'duty_history.html', {'duty_records': duty_records})
 
+from django.shortcuts import render
+from .models import DutyAllotment
+from .forms import DateFilterForm
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.db.models import Count
+
+@login_required
+@user_passes_test(chief_group_required)
+def chief_duty_history(request):
+    form = DateFilterForm(request.GET or None)
+
+    duty_records = DutyAllotment.objects.all()
+
+    if form.is_valid():
+        from_date = form.cleaned_data.get('from_date')
+        to_date = form.cleaned_data.get('to_date')
+
+        if from_date and to_date:
+            duty_records = duty_records.filter(date__range=(from_date, to_date))
+
+    duty_summary = (
+        duty_records.values('teacher__user__username')
+        .annotate(total_duties=Count('id'))
+        .order_by('teacher__user__username')
+    )
+
+    return render(request, 'chief_duty_history.html', {
+        'form': form,
+        'duty_summary': duty_summary
+    })
+
+
 
 @login_required()
 @user_passes_test(chief_group_required)
 def upload_nominal_roll(request):
-    print("Upload view triggered")
-
     if request.method == 'POST':
-        print("POST method confirmed")
-        print("FILES content:", request.FILES)
-
         excel_file = request.FILES.get('file')
         if not excel_file:
             messages.error(request, "No file uploaded.")
-            print("❌ No file found in request.FILES")
             return redirect('setup_nominal_roll')
 
         try:
             df = pd.read_excel(excel_file)
-            print("✅ Excel file read successfully")
-            print("🧾 Columns found in Excel:", df.columns.tolist())
+            if 'Register Number' not in df.columns:
+                messages.error(request, "Missing 'Register Number' column.")
+                return redirect('setup_nominal_roll')
 
-            for _, row in df.iterrows():
+            for index, row in df.iterrows():
+                register_number = row['Register Number']
                 scribe_number = row.get('Scribe', '')
                 scribe_number = scribe_number if pd.notna(scribe_number) and str(scribe_number).strip() else None
 
-                exam_attendance, _ = ExamAttendance.objects.get_or_create(
-                    date=row['Date'],
-                    course_code=row['Course Code'],
-                    course_title=row['Course Title']
-                )
-
                 student, _ = Student.objects.get_or_create(
-                    register_number=row['Register Number'],
+                    register_number=register_number,
                     defaults={'scribe_number': scribe_number}
                 )
 
-                # Update scribe_number if different and not None
                 if student.scribe_number != scribe_number and scribe_number:
                     student.scribe_number = scribe_number
                     student.save()
 
-                StudentExam.objects.get_or_create(
-                    exam_attendance=exam_attendance,
-                    student=student
-                )
+                for col in df.columns:
+                    if col not in ['Register Number', 'Scribe']:
+                        date = pd.to_datetime(col, dayfirst=True).date()
+                        cell_value = row[col]
+                        if pd.notna(cell_value) and '-' in str(cell_value):
+                            try:
+                                course_code, course_title = map(str.strip, str(cell_value).split('-', 1))
 
-            messages.success(request, 'Nominal Roll uploaded successfully!')
+                                exam_attendance, _ = ExamAttendance.objects.get_or_create(
+                                    date=date,
+                                    course_code=course_code,
+                                    course_title=course_title
+                                )
 
+                                StudentExam.objects.get_or_create(
+                                    exam_attendance=exam_attendance,
+                                    student=student
+                                )
+                            except Exception as e:
+                                print(f"⚠️ Error parsing course info in row {index}: {e}")
+                                continue
+
+            messages.success(request, "Nominal Roll uploaded successfully!")
         except Exception as e:
-            messages.error(request, f'Error uploading file: {str(e)}')
-            print(f"❌ Error reading Excel: {e}")
+            messages.error(request, f"Error uploading file: {str(e)}")
 
         return redirect('setup_nominal_roll')
-
-    # GET request → show summary
-   # Show summary
     summary = {}
-    for attendance in ExamAttendance.objects.all():
+    for attendance in ExamAttendance.objects.all().order_by('date'):
         student_exams = StudentExam.objects.filter(exam_attendance=attendance)
-
         total_students = student_exams.count()
         absent = student_exams.filter(is_absent=True).count()
         present = total_students - absent
-        scribe_students = student_exams.filter(student__scribe_number__iexact='yes').count()
 
-        summary[attendance.date] = {
-            'total_students': total_students,
+        summary.setdefault(attendance.date, []).append({
+            'course_code': attendance.course_code,
+            'course_title': attendance.course_title,
+            'total': total_students,
             'present': present,
             'absent': absent,
-        }
-
-
+        })
 
     context = {
         'summary': summary,
@@ -722,38 +736,365 @@ def delete_nominal_roll(request):
     messages.success(request, "All nominal roll entries deleted.")
     return redirect('setup_nominal_roll')
 
-# views.py
+from urllib.parse import unquote
 @login_required
 @user_passes_test(chief_group_required)
-def mark_attendance(request, date):
-    exam_attendance = get_object_or_404(ExamAttendance, date=date)
+def mark_attendance(request, date, course_code):
+    try:
+        exam_attendance = ExamAttendance.objects.get(date=date, course_code=course_code)
+    except ExamAttendance.DoesNotExist:
+        return HttpResponseNotFound("Exam not found.")
+    except ExamAttendance.MultipleObjectsReturned:
+        return HttpResponseServerError("Multiple exams found for same course code and date.")
+
     student_exams = StudentExam.objects.filter(exam_attendance=exam_attendance)
 
     if request.method == 'POST':
         if 'clear' in request.POST:
-            for se in student_exams:
-                se.is_absent = False  # Mark all as present
-                se.save()
-            messages.success(request, "All attendance cleared. Everyone marked as present.")
+            student_exams.update(is_absent=False)
         else:
             absent_ids = request.POST.getlist('absent')
             for se in student_exams:
-                se.is_absent = str(se.student.register_number) in absent_ids
+                se.is_absent = se.student.register_number in absent_ids
                 se.save()
-            messages.success(request, "Attendance successfully recorded.")
-        return redirect('mark_attendance', date=date)
+        return redirect('setup_nominal_roll')
 
     total = student_exams.count()
     absent = student_exams.filter(is_absent=True).count()
     present = total - absent
 
+    formatted_date = datetime.strptime(date, "%Y-%m-%d").strftime("%d-%m-%Y")
+
     context = {
-        'exam_attendance': exam_attendance,
-        'student_exams': student_exams,
-        'date': date,
-        'total': total,
-        'present': present,
-        'absent': absent,
+    'date': formatted_date,
+    'course_code': course_code,
+    'course_title': exam_attendance.course_title,  # 👈 ADD THIS
+    'student_exams': student_exams,
+    'total': total,
+    'present': present,
+    'absent': absent,
     }
     return render(request, 'mark_attendance.html', context)
 
+import openpyxl
+from openpyxl import Workbook
+from openpyxl.styles import Font, Alignment, Border, Side
+import os
+from datetime import date
+from django.conf import settings
+from django.http import HttpResponse
+from .models import ExamAttendance, StudentExam  # adjust import if needed
+import subprocess
+from django.db.models.functions import TruncDate
+
+
+def create_seating_excel(date_of_exam, course_data_list):
+    wb = Workbook()
+    first_course = course_data_list[0]
+    course_code = first_course['course_code']
+    course_title = first_course['course_title']
+    absentees = first_course.get('absentees', [])
+    exam_date = first_course.get('date_of_exam') 
+
+    sheet_title = f"{course_code} - {course_title}"
+    if len(sheet_title) > 31:
+        sheet_title = sheet_title[:31]
+
+    ws = wb.active
+    ws.title = sheet_title
+
+    # ✅ Calculate present_count before calling setup_sheet
+    total_students = StudentExam.objects.filter(
+        exam_attendance__course_code=course_code,
+        exam_attendance__date=exam_date
+    ).count()
+    present_count = total_students - len(absentees)
+
+
+    def setup_sheet(ws, course_code, course_title, absentees, date_of_exam, present_count):
+        ws.row_dimensions[8].height = 28.35
+        ws.row_dimensions[16].height = 28.35
+
+        ws.page_margins.left = 0.25
+        ws.page_margins.right = 0.25
+        ws.page_margins.top = 0.5
+        ws.page_margins.bottom = 0.5
+        ws.page_margins.header = 0.3
+        ws.page_margins.footer = 0.3
+        ws.page_setup.paperSize = ws.PAPERSIZE_A4
+        ws.page_setup.fitToWidth = 1
+        ws.print_options.horizontalCentered = True
+        ws.print_options.verticalCentered = True
+
+        headers = [
+            ('A1:I1', "KANNUR UNIVERSITY"),
+            ('A2:I2', "STATEMENT TO ACCOMPANY ANSWER PAPER PACKETS SENT TO "),
+            ('A3:I3', "THE CONTROLLER OF EXAMINATIONS BY THE CHIEF SUPERINTENDENT")
+        ]
+
+        for cell_range, text in headers:
+            ws.merge_cells(cell_range)
+            cell = ws[cell_range.split(":")[0]]
+            cell.value = text
+            cell.font = Font(bold=True, name="Ubuntu", size=11)
+            cell.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
+
+        row_start = 4
+        merge_sections = [
+            (f'A{row_start}:I{row_start}', "Centre of Examination:Nehru Arts and Science College Kanhangad"),
+            (f'A{row_start+1}:I{row_start+1}', "Name of Examination:"),
+            (f'A{row_start+2}:I{row_start+2}', "No. of Packets:")
+        ]
+
+        ws.merge_cells('A6:I7')
+        ws['A6'].value = ""
+        ws['A6'].alignment = Alignment(horizontal='center', vertical='center')
+        ws['A6'].font = Font(name="Ubuntu", size=11)
+
+        for cell_range, text in merge_sections:
+            ws.merge_cells(cell_range)
+            cell = ws[cell_range.split(":")[0]]
+            cell.value = text
+            cell.font = Font(name="Ubuntu", size=10)
+            cell.alignment = Alignment(horizontal='left', vertical='center', wrap_text=True)
+
+        subject_header_row = row_start + 4
+        ws.cell(row=subject_header_row, column=1).value = "Date"
+        ws.cell(row=subject_header_row, column=2).value = "Hours"
+        ws.merge_cells(start_row=subject_header_row, start_column=3, end_row=subject_header_row, end_column=5)
+        ws.cell(row=subject_header_row, column=3).value = "Subject"
+        ws.merge_cells(start_row=subject_header_row, start_column=6, end_row=subject_header_row, end_column=7)
+        ws.cell(row=subject_header_row, column=6).value = "Code No. of Question Paper"
+        ws.merge_cells(start_row=subject_header_row, start_column=8, end_row=subject_header_row, end_column=9)
+        ws.cell(row=subject_header_row, column=8).value = "Total No. of Answer Books"
+
+        for col in range(1, 10):
+            cell = ws.cell(row=subject_header_row, column=col)
+            cell.font = Font(bold=True, name="Ubuntu", size=10)
+            cell.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
+            cell.border = Border(
+                left=Side(style='thin'), right=Side(style='thin'),
+                top=Side(style='thin'), bottom=Side(style='thin')
+            )
+
+        ws.merge_cells('A9:A13')
+        ws.merge_cells('B9:B13')
+        ws.merge_cells('C9:E13')
+        subject_cell = ws['C9']
+        subject_cell.value = f"{course_code} - {course_title}"
+        subject_cell.font = Font(name="Ubuntu", size=10)
+        subject_cell.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
+        subject_cell.border = Border(
+            left=Side(style='thin'), right=Side(style='thin'),
+            top=Side(style='thin'), bottom=Side(style='thin')
+        )
+
+        ws.merge_cells('F9:G13')
+        ws.merge_cells('H9:I13')
+        ws['H9'].value = str(present_count)
+        date_cell = ws['A9']
+        date_cell.value = date_of_exam.strftime('%d-%m-%Y')
+        date_cell.font = Font(name="Ubuntu", size=10)
+        date_cell.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
+        date_cell.border = Border(left=Side(style='thin'), right=Side(style='thin'), top=Side(style='thin'), bottom=Side(style='thin'))
+
+        # Fill in Hours (hardcoded as "3 hrs")
+        hour_cell = ws['B9']
+        hour_cell.value = "3 hrs"
+        hour_cell.font = Font(name="Ubuntu", size=10)
+        hour_cell.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
+        hour_cell.border = Border(left=Side(style='thin'), right=Side(style='thin'), top=Side(style='thin'), bottom=Side(style='thin'))
+
+
+        for cell_range in ['A9', 'B9', 'C9', 'F9', 'H9']:
+            cell = ws[cell_range]
+            cell.font = Font( name="Ubuntu", size=10)
+            cell.alignment = Alignment(horizontal='center', vertical='center')
+            cell.border = Border(
+                left=Side(style='thin'), right=Side(style='thin'),
+                top=Side(style='thin'), bottom=Side(style='thin')
+            )
+
+        for r in range(subject_header_row + 1, subject_header_row + 6):
+            for c in range(1, 10):
+                cell = ws.cell(row=r, column=c)
+                cell.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
+                cell.border = Border(
+                    left=Side(style='thin'), right=Side(style='thin'),
+                    top=Side(style='thin'), bottom=Side(style='thin')
+                )
+
+        books_header_row = subject_header_row + 7
+        ws.merge_cells(f'A{books_header_row}:I{books_header_row}')
+        ws[f'A{books_header_row}'].value = "REGISTER NUMBER OF BOOKS"
+        ws[f'A{books_header_row}'].font = Font(bold=True, name="Ubuntu", size=10)
+        ws[f'A{books_header_row}'].alignment = Alignment(horizontal='center', wrap_text=True)
+
+        book_columns = ["From", "To", "No. of Books"] * 3
+        for i, header in enumerate(book_columns):
+            col = i + 1
+            cell = ws.cell(row=books_header_row + 1, column=col)
+            cell.value = header
+            cell.font = Font(bold=True, name="Ubuntu", size=10)
+            cell.alignment = Alignment(horizontal='center', wrap_text=True)
+            cell.border = Border(left=Side(style='thin'), right=Side(style='thin'), top=Side(style='thin'), bottom=Side(style='thin'))
+
+        for col in range(1, 10):
+            ws.merge_cells(start_row=17, start_column=col, end_row=20, end_column=col)
+            for row in range(17, 21):
+                cell = ws.cell(row=row, column=col)
+                cell.alignment = Alignment(wrap_text=True, vertical='center')
+                cell.border = Border(left=Side(style='thin'), right=Side(style='thin'), top=Side(style='thin'), bottom=Side(style='thin'))
+
+                # Section 3: REGISTER NUMBER OF ABSENTEES
+        absentee_header_row = books_header_row + 7
+        ws.merge_cells(f'A{absentee_header_row}:I{absentee_header_row}')
+        cell = ws[f'A{absentee_header_row}']
+        cell.value = "REGISTER NUMBER OF ABSENTEES"
+        cell.font = Font(bold=True, name="Ubuntu", size=10)
+        cell.alignment = Alignment(horizontal='center', wrap_text=True)
+
+        # Start from the next row after the header (row 23)
+        absentee_start_row = absentee_header_row + 1
+
+        # Split absentee list into 5 rows, and each row should hold a maximum of 5 absentees
+        max_per_row = 5
+
+        # Loop over absentees and fill them in rows, 5 per row
+        for i in range(5):
+            line_row = absentee_start_row + i
+            ws.merge_cells(start_row=line_row, start_column=1, end_row=line_row, end_column=9)
+            
+            # Slice the absentee list to get the max 5 absentees for this row
+            chunk = absentees[i * max_per_row:(i + 1) * max_per_row]
+
+            # Set the cell value with the absentee data (comma-separated)
+            cell = ws.cell(row=line_row, column=1)
+            if chunk:  # If there are absentees in the chunk
+                cell.value = ", ".join(chunk)  # Comma-separated absentees
+            else:
+                cell.value = ""  # Leave the cell blank if no absentees
+            
+            # Set cell style
+            cell.font = Font(name="Ubuntu", size=10)
+            cell.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
+
+            # Add borders (only from row 24 to 27, not 23)
+            if i >= 1:  # Starting from row 24 onwards
+                cell.border = Border(
+                    top=Side(style='thin'),  # Top border for row 24 and onwards
+                    bottom=Side(style='thin')  # Bottom border for all rows 24 to 27
+                )
+
+            # Set row height for compact size (~0.68 cm)
+            ws.row_dimensions[line_row].height = 19  # Adjust row height to compact size
+
+
+        footer_row = absentee_header_row + 7
+        ws.merge_cells(f'A{footer_row}:I{footer_row}')
+        ws[f'A{footer_row}'].value = "Station:Kanhangad"
+        ws[f'A{footer_row}'].alignment = Alignment(horizontal='left')
+
+        footer_next_row = footer_row + 1
+        ws.merge_cells(f'A{footer_next_row}:D{footer_next_row}')
+        ws[f'A{footer_next_row}'].value = f"Date: {date_of_exam.strftime('%d-%m-%Y')}"
+        ws[f'A{footer_next_row}'].alignment = Alignment(horizontal='left')
+        ws.merge_cells(f'F{footer_next_row}:I{footer_next_row}')
+        ws[f'F{footer_next_row}'].value = "Chief Superintendent"
+        ws[f'F{footer_next_row}'].font = Font(bold=True, name="Ubuntu", size=10)
+        ws[f'F{footer_next_row}'].alignment = Alignment(horizontal='right')
+
+        note_row = footer_row + 3
+        ws.merge_cells(f'A{note_row}:I{note_row}')
+        ws[f'A{note_row}'].value = (
+            "N.B.– This statement should accompany the answer papers for each subject and should be "
+            "carefully verified with the answer books by the Chief Superintendent before despatch."
+        )
+        ws[f'A{note_row}'].alignment = Alignment(wrap_text=True, horizontal='left')
+        ws.row_dimensions[note_row].height = 30
+    setup_sheet(ws, course_code, course_title, absentees, first_course['date_of_exam'], present_count)
+
+
+    for course in course_data_list[1:]:
+        course_code = course['course_code']
+        course_title = course['course_title']
+        absentees = course.get('absentees', [])
+        sheet_title = f"{course_code} - {course_title}"
+        if len(sheet_title) > 31:
+            sheet_title = sheet_title[:31]
+        ws = wb.create_sheet(title=sheet_title)
+        total_students = len(StudentExam.objects.filter(
+        exam_attendance__course_code=course_code,
+        exam_attendance__date=course['date_of_exam']
+    ))
+        present_count = total_students - len(absentees)
+
+    setup_sheet(ws, course_code, course_title, absentees, course['date_of_exam'], present_count)
+
+
+    safe_date = date_of_exam.strftime("%Y-%m-%d")
+    file_name = f"Seating_Layout_{safe_date}.xlsx"
+    folder_path = os.path.join(settings.MEDIA_ROOT, 'seating_files')
+    os.makedirs(folder_path, exist_ok=True)
+    file_path = os.path.join(folder_path, file_name)
+    wb.save(file_path)
+    print(f"File saved as {file_path}")
+
+def generate_excel(request):
+    date_str = request.GET.get('date')
+    if not date_str:
+        return JsonResponse({'error': 'No date provided'}, status=400)
+
+    try:
+        from datetime import datetime
+        date_obj = datetime.strptime(date_str, "%d-%m-%Y").date()
+    except ValueError:
+        return JsonResponse({'error': 'Invalid date format'}, status=400)
+
+    exams = ExamAttendance.objects.filter(date=date_obj).order_by('course_code')
+    if not exams.exists():
+        return JsonResponse({'error': 'No exams found for this date'}, status=404)
+
+    course_data_list = []
+    for exam in exams:
+        absentees_qs = StudentExam.objects.filter(exam_attendance=exam, is_absent=True)
+        absentees = [se.student.register_number for se in absentees_qs]
+        course_data_list.append({
+            'course_code': exam.course_code,
+            'course_title': exam.course_title,
+            'absentees': absentees,
+            'date_of_exam': date_obj,
+        })
+
+    if not course_data_list:
+        return JsonResponse({'error': 'No data for this date'}, status=404)
+
+    create_seating_excel(date_obj, course_data_list)
+
+    safe_date = date_obj.strftime("%Y-%m-%d")
+    excel_path = os.path.join(settings.MEDIA_ROOT, 'seating_files', f"Seating_Layout_{safe_date}.xlsx")
+
+    try:
+        convert_excel_to_pdf(excel_path)
+    except Exception as e:
+        print(f"PDF conversion failed for {safe_date}: {e}")
+        return JsonResponse({'error': 'PDF conversion failed'}, status=500)
+
+    pdf_url = os.path.join(settings.MEDIA_URL, 'seating_files', f"Seating_Layout_{safe_date}.pdf")
+    return JsonResponse({'pdf_url': pdf_url})
+
+def convert_excel_to_pdf(input_file):
+    folder_path = os.path.join(settings.MEDIA_ROOT, 'seating_files')
+    command = [
+        "soffice", "--headless", "--convert-to", "pdf",
+        "--outdir", folder_path, input_file
+    ]
+    subprocess.run(command, check=True)
+
+from django.http import JsonResponse
+from .models import ExamAttendance
+
+def get_exam_dates(request):
+    dates = ExamAttendance.objects.values_list('date', flat=True).distinct()
+    formatted_dates = sorted(set(d.strftime('%d-%m-%Y') for d in dates if d))
+    return JsonResponse({'dates': formatted_dates})

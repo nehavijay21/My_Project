@@ -156,14 +156,16 @@ class Examination(models.Model):
 # models.py
 
 from django.db import models
-
 class ExamAttendance(models.Model):
     date = models.DateField()
     course_code = models.CharField(max_length=20)
-    course_title = models.CharField(max_length=100)
+    course_title = models.CharField(max_length=255)
+
+    class Meta:
+        unique_together = ('date', 'course_code')
 
     def __str__(self):
-        return f"{self.course_code} - {self.date}"
+        return f"{self.date} - {self.course_code} - {self.course_title}"
 
 
 class Student(models.Model):

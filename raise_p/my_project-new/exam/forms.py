@@ -437,3 +437,11 @@ class DutyPreferenceForm(forms.Form):
         super().__init__(*args, **kwargs)
         exam_dates = Timetable.objects.values_list('date', flat=True).distinct()
         self.fields['pref_dates'].choices = [(date, date) for date in exam_dates]
+
+
+from django import forms
+from django.utils import timezone
+
+class DateFilterForm(forms.Form):
+    from_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), required=False)
+    to_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), required=False)

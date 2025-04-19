@@ -53,8 +53,6 @@
         gap: 5px;
         margin-bottom: 10px;
     }
-    
-    
     .search-container input[type="text"] {
         flex: 1;
         padding: 8px;
@@ -78,13 +76,13 @@
 
 <div class="box">
     <h2>Mark Attendance - {{ date }}</h2>
-    <!-- Extra Compact Stylish Search Input and Button -->
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Register No." style="width: 150px; padding: 4px; font-size: 13px;">
-            <button type="button" id="searchBtn" style="padding: 4px 8px; font-size: 13px; ">Search</button>
-        </div>
+    <h4>{{ course_code }} - {{ course_title }}</h4>
 
-
+    <!-- Search -->
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Register No.">
+        <button type="button" id="searchBtn">Search</button>
+    </div>
 
     <form method="POST">
         {% csrf_token %}
@@ -103,8 +101,12 @@
                     <td>{{ entry.student.register_number }}</td>
                     <td>
                         <input type="checkbox" name="absent" value="{{ entry.student.register_number }}"
-                            {% if entry.is_absent %}checked{% endif %}>
+                               {% if entry.is_absent %}checked{% endif %}>
                     </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3">No students found for this exam.</td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -118,13 +120,16 @@
 
 <div class="box">
     <h3>Attendance Summary</h3>
+    {% comment %} <p><strong>Date:</strong> {{ date|date:"d M Y" }}</p>
+    <p><strong>Course:</strong> {{ course_code }} - {{ course_title }}</p> {% endcomment %}
     <p><strong>Total Students:</strong> {{ total }}</p>
     <p><strong>Present:</strong> {{ present }}</p>
     <p><strong>Absent:</strong> {{ absent }}</p>
 </div>
 
+
 <script>
-    // Function to filter table rows based on search input
+    // Filter table by register number
     function filterTable() {
         const filter = document.getElementById('searchInput').value.toUpperCase();
         const rows = document.querySelectorAll('#attendanceTable tbody tr');
@@ -134,11 +139,7 @@
         });
     }
 
-    // Bind click event for the search button
     document.getElementById('searchBtn').addEventListener('click', filterTable);
-
-    // Optionally, you can allow live search on keyup as well
     document.getElementById('searchInput').addEventListener('keyup', filterTable);
 </script>
 {% endblock %}
-

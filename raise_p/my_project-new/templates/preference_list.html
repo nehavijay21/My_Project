@@ -24,11 +24,15 @@
                 <td style="text-align: center;">{{ forloop.counter }}</td>
                 <td style="text-align: center;">{{ preference.pref_date }}</td>
                     <td class="text-center">
-                        <div class="d-flex justify-content-center gap-2">
-                            <a href="{% url 'edit_preference' preference.pk %}" class="btn btn-sm btn-outline-warning" style="width: 60px; height: 35px;">Edit</a>
-                            <a href="{% url 'delete_preference' preference.pk %}" class="btn btn-sm btn-outline-danger" style="width: 60px; height: 35px;">Delete</a>
-                        </div>    
-                </td>
+                        <div class="d-flex justify-content-center gap-3">
+                            <a href="{% url 'edit_preference' preference.pk %}" title="Edit" style="color: #ffc107; font-size: 1.2rem;">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </a>
+                            <a href="{% url 'delete_preference' preference.pk %}" title="Delete" style="color: #dc3545; font-size: 1.2rem;">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                        </div>
+                    </td>
             </tr>
             {% empty %}
             <tr>

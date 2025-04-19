@@ -98,93 +98,130 @@
     </div>
 
     <!-- Added a specific class 'index-cards' to target only these cards on the index page -->
-     {%if is_chief %}
-    <div class="row index-cards">
-        <!-- Manage Programmes Card -->
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm border-light rounded">
-                <div class="card-body">
-                    <h5 class="card-title">Manage Programmes</h5>
-                    <p class="card-text">Easily organize and oversee all your programs.</p>
-                    <a href="{% url 'program_list' %}" class="btn btn-primary btn-block">Go to Programmes</a>
-                </div>
+   <!-- Added a specific class 'index-cards' to target only these cards on the index page -->
+{% if is_chief %}
+<div class="row index-cards">
+    <!-- Manage Programmes Card -->
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm border-light rounded">
+            <div class="card-body">
+                <h5 class="card-title">Manage Programmes</h5>
+                <p class="card-text">Easily organize and oversee all your programs.</p>
+                <a href="{% url 'program_list' %}" class="btn btn-primary btn-block">
+                    <i class="bi bi-clipboard-data me-2"></i> Programs
+                </a>
             </div>
         </div>
+    </div>
 
-        <!-- Manage Rooms Card -->
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm border-light rounded">
-                <div class="card-body">
-                    <h5 class="card-title">Manage Rooms</h5>
-                    <p class="card-text">Maintain room details efficiently.</p>
-                    <a href="{% url 'room_list' %}" class="btn btn-primary btn-block">Go to Rooms</a>
-                </div>
+    <!-- Manage Rooms Card -->
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm border-light rounded">
+            <div class="card-body">
+                <h5 class="card-title">Manage Rooms</h5>
+                <p class="card-text">Maintain room details efficiently.</p>
+                <a href="{% url 'room_list' %}" class="btn btn-primary btn-block">
+                    <i class="bi bi-door-open me-1"></i> Rooms
+                </a>
             </div>
         </div>
+    </div>
 
-        <!-- Manage Course Card -->
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm border-light rounded">
-                <div class="card-body">
-                    <h5 class="card-title">Manage Course</h5>
-                    <p class="card-text">Handle your course data with flexibility.</p>
-                    <a href="{% url 'course_list' %}" class="btn btn-primary btn-block">Go to Courses</a>
-                </div>
+    <!-- Manage Course Card -->
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm border-light rounded">
+            <div class="card-body">
+                <h5 class="card-title">Manage Course</h5>
+                <p class="card-text">Handle your course data with flexibility.</p>
+                <a href="{% url 'course_list' %}" class="btn btn-primary btn-block">
+                    <i class="bi bi-book me-1"></i> Courses
+                </a>
             </div>
         </div>
+    </div>
 
-        <!-- Manage Exam Card -->
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm border-light rounded">
-                <div class="card-body">
-                    <h5 class="card-title">Manage Exam</h5>
-                    <p class="card-text">Easily schedule and manage exam data.</p>
-                    <a href="{% url 'exam_list' %}" class="btn btn-primary btn-block">Go to Exam</a>
-                </div>
+    <!-- Manage Exam Card -->
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm border-light rounded">
+            <div class="card-body">
+                <h5 class="card-title">Manage Exam</h5>
+                <p class="card-text">Easily schedule and manage exam data.</p>
+                <a href="{% url 'exam_list' %}" class="btn btn-primary btn-block">
+                    <i class="bi bi-journal-check me-1"></i> Exam
+                </a>
             </div>
         </div>
+    </div>
 
-        <!-- Manage Timetable Card -->
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm border-light rounded">
-                <div class="card-body">
-                    <h5 class="card-title">Manage Timetable</h5>
-                    <p class="card-text">Easily schedule and manage timetable.</p>
-                    <a href="{% url 'timetable_list' %}" class="btn btn-primary btn-block">Go to Timetable</a>
-                </div>
+    <!-- Manage Timetable Card -->
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm border-light rounded">
+            <div class="card-body">
+                <h5 class="card-title">Manage Timetable</h5>
+                <p class="card-text">Easily schedule and manage timetable.</p>
+                <a href="{% url 'timetable_list' %}" class="btn btn-primary btn-block">
+                    <i class="bi bi-calendar me-1"></i> Timetable
+                </a>
             </div>
         </div>
+    </div>
 
-        <!-- Manage Teacher Card -->
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm border-light rounded">
-                <div class="card-body">
-                    <h5 class="card-title">Manage Teacher</h5>
-                    <p class="card-text">Easily add and manage teacher.</p>
-                    <a href="{% url 'teacher_list' %}" class="btn btn-primary btn-block">Go to Teacher</a>
-                </div>
+    <!-- Manage Teacher Card -->
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm border-light rounded">
+            <div class="card-body">
+                <h5 class="card-title">Manage Teacher</h5>
+                <p class="card-text">Easily add and manage teacher.</p>
+                <a href="{% url 'teacher_list' %}" class="btn btn-primary btn-block">
+                    <i class="bi bi-person-plus me-1"></i> Teacher
+                </a>
             </div>
         </div>
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm border-light rounded">
-                <div class="card-body">
-                    <h5 class="card-title">Manage Duty</h5>
-                    <p class="card-text">Easily manges duty allotment.</p>
-                    <a href="{% url 'duty_allotment' %}" class="btn btn-primary btn-block">Go to Duty Allotment</a>
-                </div>
+    </div>
+
+    <!-- Manage Duty Card -->
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm border-light rounded">
+            <div class="card-body">
+                <h5 class="card-title">Manage Duty</h5>
+                <p class="card-text">Easily manage duty allotment.</p>
+                <a href="{% url 'duty_allotment' %}" class="btn btn-primary btn-block">
+                    <i class="bi bi-clipboard-check me-1"></i> Duty
+                </a>
             </div>
         </div>
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm border-light rounded">
-                <div class="card-body">
-                    <h5 class="card-title">Exam Attendance</h5>
-                    <p class="card-text">Setup and upload nominal roll for attendance.</p>
-                    <a href="{% url 'setup_nominal_roll' %}" class="btn btn-primary btn-block">Go to Nominal Roll</a>
-                </div>
+    </div>
+
+    <!-- Duty Summary Report Card -->
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm border-light rounded">
+            <div class="card-body">
+                <h5 class="card-title">Duty Summary Report</h5>
+                <p class="card-text">View total duties taken by teachers in a selected time range.</p>
+                <a href="{% url 'chief_duty_history' %}" class="btn btn-success btn-block">
+                    <i class="bi bi-bar-chart-fill me-1"></i> Summary
+                </a>
             </div>
         </div>
+    </div>
+
+    <!-- Exam Attendance Card -->
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm border-light rounded">
+            <div class="card-body">
+                <h5 class="card-title">Exam Attendance</h5>
+                <p class="card-text">Setup and upload nominal roll for attendance.</p>
+                <a href="{% url 'setup_nominal_roll' %}" class="btn btn-primary btn-block">
+                    <i class="bi bi-file-earmark-spreadsheet me-1"></i> Nominal Roll
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
         
-        {% endif %}
+        
 
         {% if is_teacher %}
         <div class="row">

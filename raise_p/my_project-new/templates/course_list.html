@@ -36,18 +36,22 @@
                 <td style="text-align: center;">{{ forloop.counter }}</td>
                 <td style="text-align: center;">{{ course.course_code }}</td>
                 <td>{{ course.course_title }}</td>
-                <td>{{ course.dept_id.dept_name }}</td> <!-- Fetch department name -->
+                <td>{{ course.dept_id.dept_name }}</td>
                 <td style="text-align: center;">{{ course.exam_duration }}</td>
                 <td style="text-align: center;">{{ course.sem }}</td>
                 <td style="text-align: center;">{{ course.syllabus_year }}</td>
                 <td class="text-center">
-                    <div class="d-flex justify-content-center gap-2">
-                        <a href="{% url 'edit_course' course.pk %}" class="btn btn-sm btn-outline-warning"
-                            style="width: 60px; height: 35px;">Edit</a>
-                        <a href="{% url 'delete_course' course.pk %}" class="btn btn-sm btn-outline-danger"
-                            style="width: 60px; height: 35px;">Delete</a>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="{% url 'edit_course' course.pk %}" title="Edit" style="color: #ffc107; font-size: 1.2rem;">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                        <a href="{% url 'delete_course' course.pk %}" title="Delete" style="color: #dc3545; font-size: 1.2rem;">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
                     </div>
                 </td>
+                
+                
             </tr>
             {% empty %}
             <tr>
