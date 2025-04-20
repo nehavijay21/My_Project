@@ -1,0 +1,426 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Setup Nominal Roll{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    .box {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin: 20px auto;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        width: 90%;
+        max-width: 600px;
+        background-color: #fff;
+    }
+
+    .btn {
+        padding: 10px 16px;
+        background-color: white;
+        color: #444;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-weight: 500;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+    }
+    .btnn {
+        padding: 10px 16px;
+        background-color: #007BFF;
+        color: white;
+        font-weight: 500;
+        border: none;
+        margin-top: 14px;
+        margin-right: 10px;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 14px;
+        transition: 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #f2f2f2;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-light {
+        background-color: #f9f9f9;
+        color: #333;
+    }
+    
+    .btn-light:hover {
+        background-color: #e0e0e0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Set default icon color for regular button */
+    .btn i {
+        font-size: 14px;
+        color: blue; /* Set icon color to blue */
+    }
+    
+    /* Set default icon color for light button */
+    .btn-light i {
+        color: red; /* Set icon color to red */
+    }
+    
+    /* On hover, change the icon color of regular button */
+    .btn:hover i {
+        color: #444; /* Darker color on hover */
+    }
+    
+    /* On hover, change the icon color of light button */
+    .btn-light:hover i {
+        color: yellow; /* Change icon color to yellow on hover */
+    }
+    
+    /* Optional: Smooth transition for icon color changes */
+    .btn i, .btn-light i {
+        transition: color 0.3s ease; /* Smooth transition for color change */
+    }
+    
+    /* Ensure buttons with icons are aligned properly */
+    .btn i, .btn-light i {
+        display: inline-block;
+        margin-right: 8px; /* Space between icon and text */
+    }
+
+    input[type="file"] {
+        display: block;
+        margin-top: 10px;
+        padding: 6px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        width: auto;
+        max-width: 220px;
+        background-color: #f9f9f9;
+    }
+
+    .box h3 {
+        margin: -18px -18px 15px -18px;
+        padding: 12px 18px;
+        font-size: 18px;
+        background-color: #f0f4ff;
+        color: #1a3c6c;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border-bottom: 1px solid #ccc;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+        background-color: #fff;
+        margin: 8% auto;
+        padding: 20px 25px;
+        border-radius: 12px;
+        width: fit-content;
+        max-width: 95%;
+        overflow-x: auto;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover {
+        color: #000;
+    }
+
+    table {
+        min-width: 600px;
+        width: max-content;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+
+    table th, table td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    table th {
+        background-color: #f2f2f2;
+        font-weight: 600;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    ul li {
+        margin-bottom: 6px;
+        font-size: 14px;
+    }
+
+    @media screen and (max-width: 600px) {
+        .box, .modal-content {
+            width: 95%;
+        }
+
+        .btn {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
+    .date-button {
+        border: 1px solid #ccc;
+        background-color: #fff;
+        color: #333;
+        padding: 10px 16px;
+        font-size: 14px;
+        border-radius: 6px;
+        width: 100%;
+        text-align: center;
+        transition: box-shadow 0.3s ease;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+
+    .date-button:hover {
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        background-color: #fdfdfd;
+    }
+
+    .section-icon {
+        color: #3d5a80;
+    }
+</style>
+
+<div class="box">
+    <h3><i class="fas fa-file-import section-icon"></i> Upload Nominal Roll</h3>
+    <form method="POST" action="{% url 'setup_nominal_roll' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file" required>
+        <button class="btn" type="submit"><i class="fas fa-upload"></i> Upload Nominal Roll</button>
+    </form>
+
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li style="color: green; font-weight: bold;"><i class="fas fa-check-circle"></i> {{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form method="POST" action="{% url 'delete_nominal_roll' %}">
+        {% csrf_token %}
+        <button class="btn btn-red" type="submit"><i class="fas fa-trash-alt"></i> Delete Nominal Roll</button>
+    </form>
+
+    <button class="btn" id="generateStatementBtn"><i class="fas fa-file-excel"></i> Generate statement</button>
+
+</div>
+
+<div class="box">
+    <h3><i class="fas fa-calendar-check section-icon"></i> Attendance Management</h3>
+    <button class="btn" onclick="document.getElementById('attendanceModal').style.display='block'">
+        <i class="fas fa-clipboard-check"></i> Take Attendance
+    </button>
+    <button class="btn" onclick="document.getElementById('summaryModal').style.display='block'">
+        <i class="fas fa-list-alt"></i> View Summary
+    </button>
+</div>
+
+<div id="attendanceModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="document.getElementById('attendanceModal').style.display='none'">&times;</span>
+        <h3 style="text-align: center;"><i class="fas fa-calendar-alt"></i> Select Exam</h3>
+        <div style="margin-top: 15px;">
+            {% for date, exams in summary.items %}
+                {% for exam in exams %}
+                    <form method="get" action="{% url 'mark_attendance' date=date course_code=exam.course_code %}" style="margin-bottom: 10px;">
+                        <button class="date-button" type="submit">
+                            <i class="fas fa-calendar-day"></i> {{ date|date:"d M Y" }} — {{ exam.course_code }} - {{ exam.course_title }}
+                        </button>
+                    </form>
+                {% endfor %}
+            {% empty %}
+                <p>No exam data available</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div id="summaryModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="document.getElementById('summaryModal').style.display='none'">&times;</span>
+        <h3 style="text-align: center;"><i class="fas fa-list-check"></i> Attendance Summary</h3>
+        <table>
+            <tr>
+                <th><i class="fas fa-calendar-day"></i> Date</th>
+                <th><i class="fas fa-book"></i> Course Code</th>
+                <th><i class="fas fa-file-alt"></i> Course Title</th>
+                <th><i class="fas fa-users"></i> Total</th>
+                <th><i class="fas fa-user-check"></i> Present</th>
+                <th><i class="fas fa-user-times"></i> Absent</th>
+            </tr>
+            {% for date, exams in summary.items %}
+                {% for exam in exams %}
+                    <tr>
+                        <td>{{ date|date:"d M Y" }}</td>
+                        <td>{{ exam.course_code }}</td>
+                        <td>{{ exam.course_title }}</td>
+                        <td>{{ exam.total }}</td>
+                        <td>{{ exam.present }}</td>
+                        <td>{{ exam.absent }}</td>
+                    </tr>
+                {% endfor %}
+            {% endfor %}
+        </table>        
+    </div>
+</div>
+
+<div id="excelModal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 9999; justify-content: center; align-items: center;">
+    <div class="modal-content" style="width: 500px; max-width: 90%; border-radius: 10px; background-color: #fff; padding: 30px; text-align: center; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); position: relative;">
+        <span class="close" onclick="document.getElementById('excelModal').style.display='none'" style="position: absolute; top: 15px; right: 15px; font-size: 24px; color: #888; cursor: pointer;">&times;</span>
+        <div>
+            <i class="fas fa-file-excel" style="font-size: 50px; color: #28a745; margin-bottom: 20px;"></i>
+            <h3 style="font-size: 22px; color: #333; font-weight: 600; margin-bottom: 15px;">Excel Generated Successfully</h3>
+            <p style="font-size: 16px; color: #555; margin-bottom: 20px;">Download your PDFs below:</p>
+            <div id="pdfLinksContainer" style="text-align: left;"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.onclick = function(event) {
+        const attendanceModal = document.getElementById('attendanceModal');
+        const summaryModal = document.getElementById('summaryModal');
+        const excelModal = document.getElementById('excelModal');
+        if (event.target === attendanceModal) {
+            attendanceModal.style.display = "none";
+        } else if (event.target === summaryModal) {
+            summaryModal.style.display = "none";
+        } else if (event.target === excelModal) {
+            excelModal.style.display = "none";
+        }
+    }
+
+    window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('open_modal') === '1') {
+            document.getElementById('attendanceModal').style.display = 'block';
+        }
+    }
+
+    document.getElementById('generateStatementBtn').addEventListener('click', function () {
+        fetch("{% url 'get_exam_dates' %}")
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('pdfLinksContainer');
+                container.innerHTML = '';
+
+                if (!data.dates || data.dates.length === 0) {
+                    alert("No exam dates found.");
+                    return;
+                }
+
+                data.dates.forEach(date => {
+                    const formattedDate = typeof date === 'string' ? date : `${date.day}-${date.month}-${date.year}`;
+
+                    const wrapper = document.createElement('div');
+                    wrapper.style.marginBottom = '10px';
+                    wrapper.style.padding = '10px';
+                    wrapper.style.borderRadius = '6px';
+                    wrapper.style.transition = 'background 0.3s';
+                    wrapper.style.cursor = 'pointer';
+                    wrapper.style.display = 'flex';
+                    wrapper.style.justifyContent = 'space-between';
+                    wrapper.style.alignItems = 'center';
+                    wrapper.style.backgroundColor = '#fff';
+                    wrapper.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
+
+                    const dateText = document.createElement('span');
+                    dateText.innerText = formattedDate;
+                    dateText.style.fontWeight = '500';
+                    dateText.style.color = '#333';
+
+                    const downloadBtn = document.createElement('button');
+                    downloadBtn.innerText = '📄 Generate Excel';
+                    downloadBtn.className = 'btnn';
+                    downloadBtn.style.padding = '6px 12px';
+                    downloadBtn.style.backgroundColor = '#fff';
+                    downloadBtn.style.color = '#007bff';
+                    downloadBtn.style.border = '2px solid transparent';
+                    downloadBtn.style.borderRadius = '4px';
+                    downloadBtn.style.cursor = 'pointer';
+                    downloadBtn.style.transition = 'border-color 0.3s ease';
+
+                    wrapper.appendChild(dateText);
+                    wrapper.appendChild(downloadBtn);
+                    container.appendChild(wrapper);
+
+                    // 👇 Add hover style just for the button border
+                    wrapper.addEventListener('mouseenter', () => {
+                        downloadBtn.style.borderColor = '#007bff';
+                    });
+
+                    wrapper.addEventListener('mouseleave', () => {
+                        downloadBtn.style.borderColor = 'transparent';
+                    });
+
+                    downloadBtn.onclick = function () {
+                        fetch(`/generate-excel/?date=${encodeURIComponent(formattedDate)}`)
+                            .then(response => response.json())
+                            .then(res => {
+                                if (res.pdf_url) {
+                                    window.open(res.pdf_url, '_blank');
+                                } else {
+                                    alert("PDF not generated for this date.");
+                                }
+                            })
+                            .catch(error => {
+                                console.error("Error generating PDF:", error);
+                                alert("Something went wrong.");
+                            });
+                    };
+                });
+
+                document.getElementById('excelModal').style.display = 'flex';
+            })
+            .catch(error => {
+                console.error("Error getting dates:", error);
+                alert("Something went wrong.");
+            });
+    });
+</script>
+
+
+{% endblock %}

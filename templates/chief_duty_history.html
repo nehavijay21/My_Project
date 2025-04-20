@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Chief Duty History{% endblock %}
+
+{% block content %}
+<!-- Bootstrap Icons CDN (if not already included in base.html) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<div class="container mt-5" style="max-width: 1000px;">
+    <div class="card shadow-lg p-4 rounded-4">
+        <h2 class="text-center mb-4" style="font-family: 'Poppins', sans-serif; font-weight: bold; color: #2c3e50;">
+            📊 Duty Summary Report
+        </h2>
+
+        <!-- 🔍 Fancy Dropdown Filter -->
+        <div class="dropdown text-end mb-4">
+            <button class="btn btn-success dropdown-toggle px-4 py-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-funnel-fill"></i> Filter
+            </button>
+            <div class="dropdown-menu p-3 shadow" style="min-width: 300px;">
+                <form method="get">
+                    <div class="mb-2">
+                        <label for="from_date" class="form-label fw-semibold">From</label>
+                        <input type="date" class="form-control" name="from_date" value="{{ request.GET.from_date }}">
+                    </div>
+                    <div class="mb-2">
+                        <label for="to_date" class="form-label fw-semibold">To</label>
+                        <input type="date" class="form-control" name="to_date" value="{{ request.GET.to_date }}">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mt-2">
+                        <i class="bi bi-check-circle-fill"></i> Apply
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 📋 Duty Table -->
+        <div class="table-responsive mt-3">
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="table-primary text-center">
+                    <tr>
+                        <th>SI.No</th>
+                        <th>Teacher</th>
+                        <th>Total Duties</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in duty_summary %}
+                    <tr class="text-center">
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ record.teacher__user__username }}</td>
+                        <td>{{ record.total_duties }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="3" class="text-center text-muted">No records available for the selected period.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

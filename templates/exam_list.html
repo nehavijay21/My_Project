@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+
+{% block content %}
+<div class="container mt-5" style="max-width: 900px;">
+    <h2 class="text-center mb-4 " style="font-family: 'Poppins', Georgia, 'Times New Roman', Times, serif; color: #000000; font-size: 2rem;">Manage Exam</h2>
+    <div class="d-flex justify-content-between mb-3">
+        <!-- <h4 class="text-primary">Room List</h4> -->
+        <a href="{% url 'add_exam' %}" class="btn btn-primary">Add New Exam</a>
+    </div>
+        <table class="table table-striped table-hover table-bordered">
+            <!-- Header with Blue background -->
+            <thead class="table-primary">
+            <tr>
+                <th scope="col"style="text-align:center;">SL.No.</th>
+                <th scope="col"style="text-align:center;">Semester</th>
+                <th scope="col"style="text-align:center;">Year</th>
+                <th scope="col"style="text-align:center;">Level</th>
+                <th scope="col"style="text-align:center;">Active</th>
+                <th scope="col"style="text-align:center;">Month</th>
+                <th scope="col" style="text-align: center;">Actions</th>
+            </tr>
+        </thead>
+    <tbody>
+        {% for exam in exam %}
+        <tr>
+            <td style="text-align:center;">{{ forloop.counter }}</td>
+            <td style="text-align:center;">{{ exam.sem }}</td>
+            <td style="text-align:center;">{{ exam.year }}</td>
+            <td style="text-align:center;">{{ exam.level }}</td>
+            <td style="text-align:center;">{{ exam.active }}</td>
+            <td style="text-align:center;">{{ exam.month }}</td>
+            <td class="text-center">
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="{% url  'edit_exam' exam.pk  %}" title="Edit" style="color: #ffc107; font-size: 1.2rem;">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
+                    <a href="{% url 'delete_exam' exam.pk %}" title="Delete" style="color: #dc3545; font-size: 1.2rem;">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                </div>
+            </td>
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
